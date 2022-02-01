@@ -1,7 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-import MainOptions from "./components/MainOptions/MainOptions";
-import KycOptions from "./components/KycOptions/KycOptions";
-import ServiceRequestFormOptions from './components/ServiceRequestFormOptions/ServiceRequestFormOptions';
+import MainOptions from "./components/MainOptions";
+import KycOptions from "./components/KycOptions";
+import ServiceRequestFormOptions from './components/ServiceRequestFormOptions';
 
 const config = {
   initialMessages: [

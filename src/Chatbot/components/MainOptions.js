@@ -1,7 +1,6 @@
 import React from "react";
-
-import Button from "../Styled/Button.Styled"
-import ButtonContainer from "../Styled/ButtonContainer.styled"
+import Button from "./Styled/Button.Styled"
+import ButtonContainer from "./Styled/ButtonContainer.styled"
 
 
 const MainOptions = (props) => {
