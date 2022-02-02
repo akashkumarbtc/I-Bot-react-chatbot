@@ -17,17 +17,17 @@ const ServiceRequestFormOptions = (props) => {
     },
     {
       text: `Form ISR 3 Opt-Out of Nomination`,
-      handler: ()=>{},
+      handler: props.actionProvider.handleFormIsr3,
       id: 3,
     },
     {
       text: `Form SH 13 Registration of New Nomination`,
-      handler: ()=>{},
+      handler: props.actionProvider.handleFormSh13,
       id: 4,
     },
     {
       text: `Form SH14 Cancellation / Change in Nomination`,
-      handler: ()=>{},
+      handler: props.actionProvider.handleFormSh14,
       id: 5,
     },
   ];

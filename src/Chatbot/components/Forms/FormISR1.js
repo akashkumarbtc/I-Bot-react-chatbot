@@ -11,8 +11,8 @@ const FormISR1 = (props) => {
     },
     {
       text: "Form",
-      handler: (id) => {props.actionProvider.handleFormQuestions(id)},
-      id: 1,
+      handler: (id) => {props.actionProvider.handleFormType(id);},
+      id: 0,
     },
   ];
 

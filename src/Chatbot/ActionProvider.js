@@ -77,7 +77,46 @@ class ActionProvider {
         widget: "handleFormIsr2",
       }
     );
+    this.addMessageToState(message);
+  };
 
+  handleFormIsr3 = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "handleFormIsr3",
+      }
+    );
+    this.addMessageToState(message);
+  };
+
+  handleFormSh13 = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "handleFormSh13",
+      }
+    );
+    this.addMessageToState(message);
+  };
+
+  handleFormSh14 = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "handleFormSh14",
+      }
+    );
+    this.addMessageToState(message);
+  };
+
+  handleFormType = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "handleFormType",
+      }
+    );
     this.addMessageToState(message);
   };
 
