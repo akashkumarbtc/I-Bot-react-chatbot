@@ -7,34 +7,34 @@ const ServiceRequestFormOptions = (props) => {
   const options = [
     {
       text: `Form ISR 1 Register PAN/Update KYC`,
-      handler: (id) => {props.actionProvider.handleFormQuestions(id)},
+      handler: props.actionProvider.handleFormIsr1,
       id: 1,
     },
     {
       text: `Form ISR 2 Change/Updation of Bank Details`,
-      handler: (id) => {props.actionProvider.handleFormQuestions(id)},
+      handler: props.actionProvider.handleFormIsr2,
       id: 2,
     },
     {
       text: `Form ISR 3 Opt-Out of Nomination`,
-      handler: (id) => {props.actionProvider.handleFormQuestions(id)},
+      handler: ()=>{},
       id: 3,
     },
     {
       text: `Form SH 13 Registration of New Nomination`,
-      handler: (id) => {props.actionProvider.handleFormQuestions(id)},
+      handler: ()=>{},
       id: 4,
     },
     {
       text: `Form SH14 Cancellation / Change in Nomination`,
-      handler: (id) => {props.actionProvider.handleFormQuestions(id)},
+      handler: ()=>{},
       id: 5,
     },
   ];
 
   const buttonsMarkup = options.map((option) => (
     <>
-    <Button key={option.id} onClick={() =>option.handler(option.id)} className="option-button">
+    <Button key={option.id} onClick={option.handler} className="option-button">
       {option.text}
     </Button>
     </>

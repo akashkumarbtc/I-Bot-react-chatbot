@@ -59,6 +59,28 @@ class ActionProvider {
     });
   };
 
+  handleFormIsr1 = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "handleFormIsr1",
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleFormIsr2 = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "handleFormIsr2",
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
   addMessageToState = (message) => {
     this.setState((prevState) => ({
       ...prevState,
