@@ -1,7 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import MainOptions from "./components/MainOptions";
 import KycOptions from "./components/KycOptions";
-import ServiceRequestFormOptions from './components/ServiceRequestFormOptions';
+import ServiceRequestFormOptions from "./components/ServiceRequestFormOptions";
 
 const config = {
   initialMessages: [
@@ -18,10 +18,10 @@ const config = {
       widgetName: "handleKYC",
       widgetFunc: (props) => <KycOptions {...props} />,
     },
-    { 
-        widgetName: "handleServiceRequestForm",
-        widgetFunc: (props) => <ServiceRequestFormOptions {...props} />
-    }
+    {
+      widgetName: "handleServiceRequestForm",
+      widgetFunc: (props) => <ServiceRequestFormOptions {...props} />,
+    },
   ],
 };
 

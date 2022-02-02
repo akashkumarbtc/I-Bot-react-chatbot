@@ -1,3 +1,5 @@
+import KYCQuestions from './Data/KYCQuestions';
+
 class ActionProvider {
   constructor(
     createChatBotMessage,
@@ -16,7 +18,7 @@ class ActionProvider {
 
   handleKYC = () => {
     const message = this.createChatBotMessage(
-      "Please Select One of the below options",
+      "Please Select one of the options",
       {
         widget: "handleKYC",
       }
@@ -25,15 +27,24 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-   handleServiceRequestForm = () => {
+  handleServiceRequestForm = () => {
     const message = this.createChatBotMessage(
-      "Please Select One of the below options",
+      "Please Select one of the options",
       {
         widget: "handleServiceRequestForm",
       }
     );
 
     this.addMessageToState(message);
+  };
+
+  handleKycQuestions = (id) => {
+    KYCQuestions.map((question) =>{
+      if(question.id === id){
+    const answer = this.createChatBotMessage(`${question.answer}`)
+    this.addMessageToState(answer);
+      }
+    })
   };
 
   addMessageToState = (message) => {

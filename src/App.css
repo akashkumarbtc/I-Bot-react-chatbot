@@ -33,7 +33,14 @@
     width: 50%;
 }
 
-  
+.react-chatbot-kit-chat-bot-message{
+  margin: 0px 2px;
+}
+.react-chatbot-kit-chat-bot-message{
+width: auto;
+max-width:60%;
+}
+
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);
