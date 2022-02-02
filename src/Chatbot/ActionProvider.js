@@ -1,4 +1,5 @@
-import KYCQuestions from './Data/KYCQuestions';
+import KYCQuestions from "./Data/KYCQuestions";
+import FormsQuestions from "./Data/FormsQuestions";
 
 class ActionProvider {
   constructor(
@@ -39,12 +40,23 @@ class ActionProvider {
   };
 
   handleKycQuestions = (id) => {
-    KYCQuestions.map((question) =>{
-      if(question.id === id){
-    const answer = this.createChatBotMessage(`${question.answer}`)
-    this.addMessageToState(answer);
+    // eslint-disable-next-line array-callback-return
+    KYCQuestions.map((question) => {
+      if (question.id === id) {
+        const answer = this.createChatBotMessage(`${question.answer}`);
+        this.addMessageToState(answer);
       }
-    })
+    });
+  };
+
+  handleFormQuestions = (id) => {
+    // eslint-disable-next-line array-callback-return
+    FormsQuestions.map((question) => {
+      if (question.id === id) {
+        const answer = this.createChatBotMessage(`${question.answer}`);
+        this.addMessageToState(answer);
+      }
+    });
   };
 
   addMessageToState = (message) => {
