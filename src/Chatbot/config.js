@@ -8,7 +8,7 @@ import FormISR3 from './components/Forms/FormISR3';
 import FormSH13 from './components/Forms/FormSH13';
 import FormSH14 from './components/Forms/FormSH14';
 import FormType from './components/Forms/FormType';
-import VanillaForm from './components/Forms/VanillaForm';
+import PdfFormDisplay from './components/Forms/PdfFormDisplay';
 
 const config = {
   initialMessages: [
@@ -55,7 +55,7 @@ const config = {
     },
     {
       widgetName: "handleVanillaForm",
-      widgetFunc: (props) => <VanillaForm {...props}/>
+      widgetFunc: (props) => <PdfFormDisplay {...props}/>
     },
   ],
 };

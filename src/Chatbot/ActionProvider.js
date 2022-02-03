@@ -1,7 +1,8 @@
 import KYCQuestions from "./Data/KYCQuestions";
 import FormsQuestions from "./Data/FormsQuestions";
-import VanillaForm from "./components/Forms/VanillaForm";
+import PdfFormDisplay from "./components/Forms/PdfFormDisplay";
 import KycQues1 from './components/KycQues1';
+import ISR1Vanilla from '../forms/ISR-1-Vanilla.pdf'
 
 class ActionProvider {
   constructor(
@@ -145,7 +146,7 @@ class ActionProvider {
 
   handleVanillaForm = () => {
     const message = this.createChatBotMessage(
-      <VanillaForm /> //use react components for this and for kycQues1
+      <PdfFormDisplay pdf={ISR1Vanilla} /> //use react components for this and for kycQues1
     );
     this.addMessageToState(message);
   };
