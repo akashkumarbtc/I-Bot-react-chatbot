@@ -12,8 +12,12 @@ const FormISR1 = (props) => {
     {
       text: "Form",
       handler: (id) => {props.actionProvider.handleFormType(id);},
-      id: 0,
+      id: 11,
     },
+    {
+      text: "Back",
+      handler: (id) => { props.actionProvider.handleServiceRequestForm(id)},
+    }
   ];
 
   const buttonsMarkup = options.map((option) => (

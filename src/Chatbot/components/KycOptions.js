@@ -6,7 +6,7 @@ const KycOptions = (props) => {
   const options = [
     {
       text: "What is KYC",
-      handler: (id) => props.actionProvider.handleKycQuestions(id),
+      handler: (id) => props.actionProvider.handleKYCQues1(id),
       id: 1,
     },
     {
@@ -33,6 +33,11 @@ const KycOptions = (props) => {
       text: "Status of Pan Linked to Aadhar",
       handler: (id) => props.actionProvider.handleKycQuestions(id),
       id: 6,
+    },
+    {
+      text: "Home",
+      handler: (id) => props.actionProvider.handleMain(id),
+      id: 0,
     },
   ];
 

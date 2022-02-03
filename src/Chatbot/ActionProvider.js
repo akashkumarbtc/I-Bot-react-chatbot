@@ -17,6 +17,17 @@ class ActionProvider {
     this.createCustomMessage = createCustomMessage;
   }
 
+  handleMain = () => {
+    const message = this.createChatBotMessage(
+      "Please Select one of the options",
+      {
+        widget: "options",
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
   handleKYC = () => {
     const message = this.createChatBotMessage(
       "Please Select one of the options",
@@ -24,6 +35,14 @@ class ActionProvider {
         widget: "handleKYC",
       }
     );
+
+    this.addMessageToState(message);
+  };
+
+  handleKYCQues1 = () => {
+    const message = this.createChatBotMessage("answer", {
+      widget: "handleKYCQues1",
+    });
 
     this.addMessageToState(message);
   };
@@ -43,7 +62,9 @@ class ActionProvider {
     // eslint-disable-next-line array-callback-return
     KYCQuestions.map((question) => {
       if (question.id === id) {
-        const answer = this.createChatBotMessage(`${question.answer}`);
+        const answer = this.createChatBotMessage(`${question.answer}`, {
+          widget: "handleKYC",
+        });
         this.addMessageToState(answer);
       }
     });
@@ -53,7 +74,9 @@ class ActionProvider {
     // eslint-disable-next-line array-callback-return
     FormsQuestions.map((question) => {
       if (question.id === id) {
-        const answer = this.createChatBotMessage(`${question.answer}`);
+        const answer = this.createChatBotMessage(`${question.answer}`, {
+          widget: `${question.name}`,
+        });
         this.addMessageToState(answer);
       }
     });

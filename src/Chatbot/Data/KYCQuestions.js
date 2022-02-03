@@ -2,7 +2,8 @@ const KYCQuestions = [
   {
     id: 1,
     question: "What is KYC?",
-    answer: "hi",
+    answer:
+      "KYC is an acronym for 'Know Your Client'. This term is commonly used during the client identification process. SEBI has mandated specific requirements relating to KYC norms that intermediaries such as RTAs need to  know of the investors serviced. KYC is typically in the form of verifying your identity and address, other  information regarding your occupation and other demographic information. As per SEBI Circular dated 03-Nov-2021 and clarification dated 14-Dec-2021, wherein all investors holding shares in physical form need to be KYC complaint on or before 31-03-2022, to avail any service request form us.  Read More .....",
   },
   {
     id: 2,
@@ -31,7 +32,8 @@ const KYCQuestions = [
   {
     id: 6,
     question: "Status of Pan Linked to Aadhar",
-    answer: "To know the status of your Pan Linked to Aadhaar check on this link: https://www.incometax.gov.in/iec/foportal",
+    answer:
+      "To know the status of your Pan Linked to Aadhaar check on this link: https://www.incometax.gov.in/iec/foportal",
   },
 ];
 

@@ -25,6 +25,12 @@ const FormType = (props) => {
       },
       id: 3,
     },
+    {
+      text: "Back",
+      handler: (id) => {
+        props.actionProvider.handleServiceRequestForm(id);
+      },
+    },
   ];
 
   const buttonsMarkup = options.map((option) => (

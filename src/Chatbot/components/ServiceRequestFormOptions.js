@@ -30,6 +30,11 @@ const ServiceRequestFormOptions = (props) => {
       handler: props.actionProvider.handleFormSh14,
       id: 5,
     },
+    {
+      text: "Home",
+      handler: (id) => props.actionProvider.handleMain(id),
+      id: 0,
+    }
   ];
 
   const buttonsMarkup = options.map((option) => (
