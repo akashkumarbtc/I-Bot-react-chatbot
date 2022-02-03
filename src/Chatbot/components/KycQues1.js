@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-
-const KycQues1 = ({question}) => {
-  const [Id, setId] = useState(1);
-//   const handleId = () => {
-//       let temp = id+1;
-//     // setId(temp);
-//     console.log(temp);
-//   };
+import KYCQuestions from "./../Data/KYCQuestions";
+const KycQues1 = () => {
+  const [Id, setId] = useState(0);
+  const [answer, setAnswer] = useState(KYCQuestions[0].answer);
+  const handleId = () => {
+    const temp = Id + 1;
+    setId(temp);
+    setAnswer(answer + KYCQuestions[Id].answer)
+    console.log(KYCQuestions);
+    console.log(KYCQuestions[Id].answer);
+  };
 
   return (
     <div>
       <>
-        <p>${question[Id].answer}</p>
-        <p onClick={setId(Id+1)}>Read more...</p>
+        <p>{answer}</p>
+        <p onClick={handleId}>Read more...</p>
       </>
     </div>
   );

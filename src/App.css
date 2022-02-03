@@ -30,7 +30,7 @@
 
 
   .react-chatbot-kit-chat-container{
-    width: 50%;
+    width: 30%;
 }
 
 .react-chatbot-kit-chat-bot-message{
@@ -38,7 +38,22 @@
 }
 .react-chatbot-kit-chat-bot-message{
 width: auto;
-max-width:60%;
+max-width:100%;
+min-width: none;
+}
+.react-chatbot-kit-chat-input{
+  display: none;
+}
+
+.react-chatbot-kit-chat-btn-send{
+  display: none;
+}
+.react-chatbot-kit-chat-message-container{
+  overflow-x: hidden;
+}
+
+.react-chatbot-kit-chat-inner-container{
+  height:auto;
 }
 
   @keyframes App-logo-spin {

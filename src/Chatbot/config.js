@@ -8,8 +8,7 @@ import FormISR3 from './components/Forms/FormISR3';
 import FormSH13 from './components/Forms/FormSH13';
 import FormSH14 from './components/Forms/FormSH14';
 import FormType from './components/Forms/FormType';
-import KycQues1 from './components/KycQues1';
-import KYCQuestions from './Data/KYCQuestions';
+import VanillaForm from './components/Forms/VanillaForm';
 
 const config = {
   initialMessages: [
@@ -25,12 +24,6 @@ const config = {
     {
       widgetName: "handleKYC",
       widgetFunc: (props) => <KycOptions {...props} />,
-    },
-    {
-      widgetName: "handleKYCQues1",
-      widgetFunc: (props) => <KycQues1 {...props} />,
-      props: {KYCQuestions}
-
     },
     {
       widgetName: "handleServiceRequestForm",
@@ -59,6 +52,10 @@ const config = {
     {
       widgetName: "handleFormType",
       widgetFunc: (props) => <FormType {...props}/>
+    },
+    {
+      widgetName: "handleVanillaForm",
+      widgetFunc: (props) => <VanillaForm {...props}/>
     },
   ],
 };

@@ -1,5 +1,7 @@
 import KYCQuestions from "./Data/KYCQuestions";
 import FormsQuestions from "./Data/FormsQuestions";
+import VanillaForm from "./components/Forms/VanillaForm";
+import KycQues1 from './components/KycQues1';
 
 class ActionProvider {
   constructor(
@@ -40,9 +42,7 @@ class ActionProvider {
   };
 
   handleKYCQues1 = () => {
-    const message = this.createChatBotMessage("answer", {
-      widget: "handleKYCQues1",
-    });
+    const message = this.createChatBotMessage(<KycQues1  />);
 
     this.addMessageToState(message);
   };
@@ -139,6 +139,13 @@ class ActionProvider {
       {
         widget: "handleFormType",
       }
+    );
+    this.addMessageToState(message);
+  };
+
+  handleVanillaForm = () => {
+    const message = this.createChatBotMessage(
+      <VanillaForm /> //use react components for this and for kycQues1
     );
     this.addMessageToState(message);
   };

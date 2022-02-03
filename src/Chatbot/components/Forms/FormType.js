@@ -7,7 +7,7 @@ const FormType = (props) => {
     {
       text: "Plain Vanilla Form",
       handler: (id) => {
-        props.actionProvider.handleFormType(id);
+        props.actionProvider.handleVanillaForm(id);
       },
       id: 1,
     },
