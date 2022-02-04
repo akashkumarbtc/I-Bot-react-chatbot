@@ -15,7 +15,7 @@ const KycQues1 = () => {
     <div>
       <>
         <p>{answer}</p>
-        <p onClick={handleId}>Read more...</p>
+        <p onClick={handleId} style={{color:"navajowhite", cursor: "pointer"}}>Read more...</p>
       </>
     </div>
   );

@@ -1,10 +1,15 @@
+#root {
+  height: 100vh;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,23 +18,15 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
 
 .react-chatbot-kit-chat-container {
-  width: 30%;
+  width: 45%;
+  box-shadow: 0px 0px 50px 2px rgb(212, 209, 209);
+  border-radius: 10px;
+  height: 75vh;
 }
 
 .react-chatbot-kit-chat-bot-message {
@@ -41,18 +38,29 @@
   min-width: none;
 }
 .react-chatbot-kit-chat-input {
-  display: none;
+  margin: 5px;
+  padding: 10px;
+  pointer-events: none;
+  background-color: whitesmoke;
 }
 
 .react-chatbot-kit-chat-btn-send {
-  display: none;
+  margin: 5px 5px 5px 0px;
+  width: 60px;
+  background-color: white;
+  pointer-events: none;
 }
 .react-chatbot-kit-chat-message-container {
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .react-chatbot-kit-chat-inner-container {
   height: auto;
+}
+
+.react-chatbot-kit-chat-btn-send-icon {
+  fill: #2898ec;
+  width: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -65,13 +73,13 @@
 }
 
 .control-panel {
-  font-size: 16px;
+  font-size: 12px;
   color: black;
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
   width: 90%;
-  margin: 1rem 0rem;
+  margin: 0.5rem;
   display: flex;
   /* flex-direction: column; */
   align-items: baseline;
@@ -81,6 +89,8 @@
 }
 .control-panel i {
   margin: 0rem 0.5rem;
+  cursor: pointer !important;
+  pointer-events: all;
 }
 .clickable {
   cursor: pointer;
@@ -89,4 +99,61 @@
 .disabled {
   cursor: not-allowed;
   color: lightgray;
+}
+
+.App-header {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 100vh;
+}
+.pdf-display,
+.chatbot-display {
+  width: 50%;
+}
+
+.chatbot-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  right: -9%;
+  top: 10%;
+}
+
+.main-button {
+  height: 70px;
+  width: 70px;
+  border-radius: 100px;
+  background: #2898ec;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  position: absolute;
+  right: 42%;
+  top: 75%;
+  cursor: pointer;
+}
+
+.pdf-display {
+  height: 90vh;
+  background-color: #c9deee;
+  max-width: 35rem;
+}
+
+#pdf-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.react-pdf__Page__canvas,
+.react-pdf__Page__textContent {
+  width: 535px !important;
+  height: 570px !important;
 }

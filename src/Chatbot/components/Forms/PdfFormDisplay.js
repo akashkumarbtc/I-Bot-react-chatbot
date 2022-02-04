@@ -2,21 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Document, Page, pdfjs } from "react-pdf";
 import ControlPanel from "./ControlPanel";
-import ISR1Vanilla from "../../../forms/ISR-1-Vanilla.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 const FormContainer = styled.div`
-  border: 1px solid black;
-  color: black;
-  text-align: left;
+  width:100%;
 `;
 
 const PdfFormDisplay = ({ pdf }) => {
   const [scale, setScale] = useState(1.0);
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
+  // const [pdfFile, SetPdfFile] = useState(pdf);
 
-  const [pdffile] = useState(ISR1Vanilla);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -30,7 +27,7 @@ const PdfFormDisplay = ({ pdf }) => {
 
   return (
     <FormContainer>
-      {pdffile && (
+      {/* {pdf && ( */}
         <>
           <section
             id="pdf-section"
@@ -43,14 +40,14 @@ const PdfFormDisplay = ({ pdf }) => {
               pageNumber={pageNumber}
               setPageNumber={setPageNumber}
               file={pdf}
-              pdffile = {pdffile}
+              pdffile = {pdf}
             />
             <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
               <Page pageNumber={pageNumber} scale={scale} />
             </Document>
           </section>
         </>
-      )}
+      {/* )} */}
     </FormContainer>
   );
 };

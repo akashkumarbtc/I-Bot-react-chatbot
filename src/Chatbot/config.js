@@ -11,15 +11,16 @@ import FormType from './components/Forms/FormType';
 import PdfFormDisplay from './components/Forms/PdfFormDisplay';
 
 const config = {
+  botName: "I-BOT",
   initialMessages: [
-    createChatBotMessage(`Hello. Select an option`, {
+    createChatBotMessage(`Welcome to Link Intime Chatbot. Please select an option`, {
       widget: "options",
     }),
   ],
-  state: {
-    setDisplayForm: "false",
-    setPdfFile : "" ,
-  },
+  // state: {
+  //   setDisplayForm: "false",
+  //   setPdfFile : "" ,
+  // },
   widgets: [
     {
       widgetName: "options",

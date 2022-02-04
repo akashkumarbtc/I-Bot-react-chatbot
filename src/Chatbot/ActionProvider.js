@@ -21,6 +21,7 @@ class ActionProvider {
     this.stateRef = stateRef;
     this.createCustomMessage = createCustomMessage;
   }
+  
 
   handleMain = () => {
     const message = this.createChatBotMessage(
@@ -176,11 +177,17 @@ class ActionProvider {
     else if(id===2){
       pdf = ISR1Filable;
     }
-    const message = this.createChatBotMessage(
-      <PdfFormDisplay displayForm = {true} pdf={pdf} /> //use react components for this and for kycQues1
-    );
+    this.setState((state) => ({
+      ...state,
+      displayForm: true,
+      pdffile:  pdf
+    }));
+    // this.setState.setPdfFile(pdf)
+    // const message = this.createChatBotMessage(
+      
+    // );
     this.addMessageToState(Cmessage);
-    this.addMessageToState(message);
+    // this.addMessageToState(message);
   };
   handleFillableForm = (id) => {
     const Cmessage = this.createClientMessage("Fillable Form");
