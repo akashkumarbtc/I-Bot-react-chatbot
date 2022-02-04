@@ -5,6 +5,9 @@ import KycQues1 from "./components/KycQues1";
 import ISR1Vanilla from "../forms/ISR-1-Vanilla.pdf"
 import ISR2Vanilla from "../forms/ISR2Vanilla.pdf"
 import ISR1Filable from "../forms/ISR1-Fillable.pdf"
+import ViewMessage from './components/Forms/ViewMessage';
+
+
 
 class ActionProvider {
   constructor(
@@ -169,6 +172,7 @@ class ActionProvider {
   };
 
   handleVanillaForm = (id) => {
+    
     const Cmessage = this.createClientMessage("Vanilla Form");
     let pdf = "";
     if(id===1){
@@ -177,17 +181,12 @@ class ActionProvider {
     else if(id===2){
       pdf = ISR1Filable;
     }
-    this.setState((state) => ({
-      ...state,
-      displayForm: true,
-      pdffile:  pdf
-    }));
-    // this.setState.setPdfFile(pdf)
-    // const message = this.createChatBotMessage(
-      
-    // );
+    console.log("here before")
+    const message = this.createChatBotMessage(
+    <ViewMessage pdf = {pdf} />
+    )
     this.addMessageToState(Cmessage);
-    // this.addMessageToState(message);
+    this.addMessageToState(message);
   };
   handleFillableForm = (id) => {
     const Cmessage = this.createClientMessage("Fillable Form");

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Document, Page, pdfjs } from "react-pdf";
+import {  Document, Page } from 'react-pdf';
 import ControlPanel from "./ControlPanel";
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
+import { pdfjs } from 'react-pdf'
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const FormContainer = styled.div`
   width:100%;
@@ -14,16 +17,22 @@ const PdfFormDisplay = ({ pdf }) => {
   const [pageNumber, setPageNumber] = useState(1);
   // const [pdfFile, SetPdfFile] = useState(pdf);
 
-
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
-// const form = () =>{
-//   if(id===1){
-//     console.log("check");
-//     return {ISR1Vanilla}
-//   }
-// }
+
+
+function removeTextLayerOffset() {
+  const textLayers = document.querySelectorAll(
+    '.react-pdf__Page__textContent'
+  );
+  textLayers.forEach((layer) => {
+    const { style } = layer;
+    style.top = '0';
+    style.left = '0';
+    style.transform = '';
+  });
+}
 
   return (
     <FormContainer>
@@ -41,9 +50,10 @@ const PdfFormDisplay = ({ pdf }) => {
               setPageNumber={setPageNumber}
               file={pdf}
               pdffile = {pdf}
+              
             />
-            <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
-              <Page pageNumber={pageNumber} scale={scale} />
+            <Document file={pdf}  onLoadSuccess={onDocumentLoadSuccess}>
+              <Page height="600" pageNumber={pageNumber} scale={scale} onLoadSuccess={removeTextLayerOffset} />
             </Document>
           </section>
         </>

@@ -30,8 +30,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="pdf-display">
-            {/* {setDisplay ? showBot && pdfFile && (<PdfFormDisplay displayForm={pdfFile} />): ""} */}
-            <PdfFormDisplay pdf={ISR1Vanilla} />
+            {setDisplay ? showBot && pdfFile && (<PdfFormDisplay pdf={pdfFile} />): ""}
+            {/* <PdfFormDisplay pdf={ISR1Vanilla} /> */}
         </div>
         <div className="chatbot-display">
           {showBot && (

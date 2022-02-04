@@ -8,7 +8,7 @@ export const DisplayPdf = (state=initState, action) => {
 
     switch (action.type) {
         case "SET_DISPLAY_FALSE": 
-            return { setDisplay: true}
+            return { setDisplay: false, pdfFile: null}
 
         case "SET_DISPLAY_TRUE": 
             return { setDisplay: true, pdfFile: action.payload}
