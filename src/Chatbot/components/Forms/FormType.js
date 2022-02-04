@@ -14,7 +14,7 @@ const FormType = (props) => {
     {
       text: "Fillable Form",
       handler: (id) => {
-        props.actionProvider.handleFormType(id);
+        props.actionProvider.handleVanillaForm(id);
       },
       id: 2,
     },

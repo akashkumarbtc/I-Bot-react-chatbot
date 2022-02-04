@@ -34,6 +34,7 @@ const ControlPanel = (props) => {
   const zoomOutClass = isMinZoom ? 'disabled' : 'clickable';
   const zoomInClass = isMaxZoom ? 'disabled' : 'clickable';
 
+
   const zoomOut = () => {
     if (!isMinZoom) setScale(scale - 0.1);
   };
@@ -93,6 +94,9 @@ const ControlPanel = (props) => {
       </div>
       <div className="mx-3">
         <PDFPrinter file={file} />
+      </div>
+      <div className="mx-3">
+       <i class="fas fa-times clickable"/>
       </div>
     </div>
   );

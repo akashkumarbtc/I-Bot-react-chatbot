@@ -2,7 +2,9 @@ import KYCQuestions from "./Data/KYCQuestions";
 import FormsQuestions from "./Data/FormsQuestions";
 import PdfFormDisplay from "./components/Forms/PdfFormDisplay";
 import KycQues1 from "./components/KycQues1";
-import ISR1Vanilla from "../forms/ISR-1-Vanilla.pdf";
+import ISR1Vanilla from "../forms/ISR-1-Vanilla.pdf"
+import ISR2Vanilla from "../forms/ISR2Vanilla.pdf"
+import ISR1Filable from "../forms/ISR1-Fillable.pdf"
 
 class ActionProvider {
   constructor(
@@ -165,10 +167,25 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleVanillaForm = () => {
+  handleVanillaForm = (id) => {
     const Cmessage = this.createClientMessage("Vanilla Form");
+    let pdf = "";
+    if(id===1){
+      pdf = ISR1Vanilla;
+    }
+    else if(id===2){
+      pdf = ISR1Filable;
+    }
     const message = this.createChatBotMessage(
-      <PdfFormDisplay pdf={ISR1Vanilla} /> //use react components for this and for kycQues1
+      <PdfFormDisplay displayForm = {true} pdf={pdf} /> //use react components for this and for kycQues1
+    );
+    this.addMessageToState(Cmessage);
+    this.addMessageToState(message);
+  };
+  handleFillableForm = (id) => {
+    const Cmessage = this.createClientMessage("Fillable Form");
+    const message = this.createChatBotMessage(
+      <PdfFormDisplay id = {id} /> //use react components for this and for kycQues1
     );
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);

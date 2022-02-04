@@ -16,6 +16,10 @@ const config = {
       widget: "options",
     }),
   ],
+  state: {
+    setDisplayForm: "false",
+    setPdfFile : "" ,
+  },
   widgets: [
     {
       widgetName: "options",
