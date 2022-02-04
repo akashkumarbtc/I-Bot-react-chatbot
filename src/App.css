@@ -48,7 +48,7 @@
   display: none;
 }
 .react-chatbot-kit-chat-message-container {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .react-chatbot-kit-chat-inner-container {

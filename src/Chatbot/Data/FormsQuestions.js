@@ -20,7 +20,7 @@ f) E-mail id.`,
   {
     id: 3,
     name: "handleFormIsr3",
-    question: `What is Form ISR 2`,
+    question: `What is Form ISR 3`,
     answer: `This form is to Opt-out of Nomination, by Holders of Physical Securities in Listed Companies. Use of ISR-3 (ie to Opt-Out of Nomination OR if “No_Nomination” is required by the investor ) will be applied for the entire securities against the said Folio.`,
   },
   {

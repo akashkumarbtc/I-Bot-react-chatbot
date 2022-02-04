@@ -35,7 +35,7 @@ const KycOptions = (props) => {
       id: 6,
     },
     {
-      text: "Home",
+      text: "Main Menu",
       handler: (id) => props.actionProvider.handleMain(id),
       id: 0,
     },
