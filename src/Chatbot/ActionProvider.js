@@ -6,6 +6,7 @@ import ISR1Vanilla from "../forms/ISR-1-Vanilla.pdf"
 import ISR2Vanilla from "../forms/ISR2Vanilla.pdf"
 import ISR1Filable from "../forms/ISR1-Fillable.pdf"
 import ViewMessage from './components/Forms/ViewMessage';
+import ISR1Prefilled from '../forms/ISR1-Prefilled.pdf';
 
 
 
@@ -173,13 +174,19 @@ class ActionProvider {
 
   handleVanillaForm = (id) => {
     
-    const Cmessage = this.createClientMessage("Vanilla Form");
+    let Cmessage = ""
     let pdf = "";
     if(id===1){
+      Cmessage = this.createClientMessage("Vanilla Form");
       pdf = ISR1Vanilla;
     }
     else if(id===2){
+      Cmessage = this.createClientMessage("Fillable Form");
       pdf = ISR1Filable;
+    }
+    else if(id===3){
+      Cmessage = this.createClientMessage("Pre-filled Form");
+      pdf = ISR1Prefilled;
     }
     console.log("here before")
     const message = this.createChatBotMessage(
@@ -188,6 +195,8 @@ class ActionProvider {
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
+
+  
   handleFillableForm = (id) => {
     const Cmessage = this.createClientMessage("Fillable Form");
     const message = this.createChatBotMessage(

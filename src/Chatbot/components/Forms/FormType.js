@@ -21,7 +21,7 @@ const FormType = (props) => {
     {
       text: "Prefilled Form",
       handler: (id) => {
-        props.actionProvider.handleFormType(id);
+        props.actionProvider.handleVanillaForm(id);
       },
       id: 3,
     },

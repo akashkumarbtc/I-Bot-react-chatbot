@@ -9,6 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const FormContainer = styled.div`
   width:100%;
+  background-color: #c9deee;
 `;
 
 const PdfFormDisplay = ({ pdf }) => {

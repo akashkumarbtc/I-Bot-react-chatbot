@@ -16,6 +16,7 @@ const Logo = styled.span`
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  font-weight: bold;
 `;
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
             </>
           )}
           <button className="main-button" onClick={handleBot}>
-            <Logo>I-Bot</Logo>
+            <Logo>{showBot ? "X": "I-Bot"}</Logo>
           </button>
         </div>
       </header>

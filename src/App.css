@@ -141,7 +141,7 @@
 
 .pdf-display {
   height: 90vh;
-  background-color: #c9deee;
+  /* background-color: #c9deee; */
   max-width: 35rem;
 }
 
@@ -157,3 +157,18 @@
   width: 535px !important;
   height: 570px !important;
 }
+
+.close-btn {
+  background-color: #2898ec;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+}
+
+.close-btn:hover {
+  background-color: #b0d1eb;
+}
+
+/* .react-chatbot-kit-chat-bot-message {
+  padding: 5px 10px;
+} */
