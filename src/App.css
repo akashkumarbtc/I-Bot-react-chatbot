@@ -177,3 +177,7 @@
 /* .react-chatbot-kit-chat-bot-message {
   padding: 5px 10px;
 } */
+
+.react-chatbot-kit-chat-message-container {
+  height: 436px !important;
+}

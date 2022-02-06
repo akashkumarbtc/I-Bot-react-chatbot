@@ -10,6 +10,7 @@ import FormISR3 from './components/Forms/FormISR3';
 import FormSH13 from './components/Forms/FormSH13';
 import FormSH14 from './components/Forms/FormSH14';
 import FormType from './components/Forms/FormType';
+import FinalWorkflow from './components/Forms/FinalWorkflow';
 import PdfFormDisplay from './components/Forms/PdfFormDisplay';
 
 const config = {
@@ -71,6 +72,10 @@ const config = {
     {
       widgetName: "handleISR1Form",
       widgetFunc: (props) => <PdfFormDisplay {...props}/>
+    },
+    {
+      widgetName: "finalWorkflow",
+      widgetFunc: (props) => <FinalWorkflow {...props}/>
     },
   ],
 };

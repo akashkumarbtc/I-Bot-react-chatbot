@@ -51,7 +51,6 @@ const ControlPanel = (props) => {
   const dispatch = useDispatch()
 
   const closeHandler = () => {
-    console.log("close btn")
     dispatch(closePdfFile())
   }
 

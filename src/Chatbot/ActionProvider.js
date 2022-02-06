@@ -86,7 +86,9 @@ class ActionProvider {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "howToDoKYC",
           });
-        } else{
+        } else if(id === 7 || id === 8 ){
+          answer = this.createChatBotMessage(`${question.answer}`);
+        }else{
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "lastWorkflow",
           });
@@ -202,7 +204,10 @@ class ActionProvider {
     }
     console.log("here before")
     const message = this.createChatBotMessage(
-    <ViewMessage pdf = {pdf} />
+    <ViewMessage pdf = {pdf} />,
+    {
+      widget: "finalWorkflow",
+    }
     )
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);

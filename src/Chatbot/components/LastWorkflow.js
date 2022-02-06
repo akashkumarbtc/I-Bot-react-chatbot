@@ -20,10 +20,9 @@ const LastWorkflow = (props) => {
       id: 0,
     },
     {
-        text: "Back to how to do KYC",
-        handler: (id) => props.actionProvider.handleKycQuestions(id),
-        id: 9,
-      },
+      text: "Back to how to do KYC",
+      handler: (id) => props.actionProvider.handleKycQuestions(id),
+    },
   ];
 
   const buttonsMarkup = options.map((option) => (

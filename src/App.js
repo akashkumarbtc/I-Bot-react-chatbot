@@ -6,10 +6,9 @@ import MessageParser from "./Chatbot/MessageParser";
 import ActionProvider from "./Chatbot/ActionProvider";
 import config from "./Chatbot/config";
 import styled from "styled-components";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PdfFormDisplay from "./Chatbot/components/Forms/PdfFormDisplay";
-import ISR1Vanilla from './forms/ISR-1-Vanilla.pdf';
-;
+import { closePdfFile } from './actions/PdfDisplayActions';
 
 
 const Logo = styled.span`
@@ -23,12 +22,17 @@ function App() {
   const {setDisplay, pdfFile} = useSelector(state => state.displayPDF)
   const [showBot, setBot] = useState(true);
   
+  const dispatch = useDispatch()
+
   function handleBot() {
     const botState = !showBot;
     setBot(botState);
+
+    dispatch(closePdfFile())
   }
   return (
     <div className="App">
+      {/* <h1>Link Intime Chatbot [I-Bot] Demo</h1> */}
       <header className="App-header">
         <div className="pdf-display">
             {setDisplay ? showBot && pdfFile && (<PdfFormDisplay pdf={pdfFile} />): ""}
