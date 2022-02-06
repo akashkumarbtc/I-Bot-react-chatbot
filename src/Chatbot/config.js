@@ -1,6 +1,8 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import MainOptions from "./components/MainOptions";
 import KycOptions from "./components/KycOptions";
+import HowToDoKYC from './components/HowToDoKYC';
+import LastWorkflow from './components/LastWorkflow';
 import ServiceRequestFormOptions from "./components/ServiceRequestFormOptions";
 import FormISR1 from './components/Forms/FormISR1';
 import FormISR2 from './components/Forms/FormISR2';
@@ -31,6 +33,14 @@ const config = {
       widgetFunc: (props) => <KycOptions {...props} />,
     },
     {
+      widgetName: "howToDoKYC",
+      widgetFunc: (props) => <HowToDoKYC {...props} />,
+    },
+    {
+      widgetName: "lastWorkflow",
+      widgetFunc: (props) => <LastWorkflow {...props} />,
+    },
+    {
       widgetName: "handleServiceRequestForm",
       widgetFunc: (props) => <ServiceRequestFormOptions {...props} />,
     },
@@ -59,7 +69,7 @@ const config = {
       widgetFunc: (props) => <FormType {...props}/>
     },
     {
-      widgetName: "handleVanillaForm",
+      widgetName: "handleISR1Form",
       widgetFunc: (props) => <PdfFormDisplay {...props}/>
     },
   ],

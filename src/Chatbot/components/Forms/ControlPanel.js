@@ -108,7 +108,7 @@ const ControlPanel = (props) => {
           <PDFPrinter file={file} />
         </div>
         <div className="mx-3">
-          <button className="close-btn" onClick={closeHandler} ><i className="fas fa-times clickable"/></button>
+          <button className="close-btn" onClick={closeHandler} >x</button>
         </div>
     </div>
   );

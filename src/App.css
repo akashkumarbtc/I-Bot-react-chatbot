@@ -84,6 +84,7 @@
   /* flex-direction: column; */
   align-items: baseline;
   justify-content: space-between;
+  border-bottom: 1px solid gray;
   /* font-size: calc(10px + 2vmin); */
   /* color: white; */
 }
@@ -152,21 +153,25 @@
   justify-self: center;
 }
 
-.react-pdf__Page__canvas,
+/* .react-pdf__Page__canvas,
 .react-pdf__Page__textContent {
   width: 535px !important;
   height: 570px !important;
-}
+} */
 
 .close-btn {
-  background-color: #2898ec;
+  text-align: center;
+  background-color: gray;
   cursor: pointer;
   color: white;
-  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  border: none;
+  border-radius: 100px;
 }
 
 .close-btn:hover {
-  background-color: #b0d1eb;
+  background-color: rgb(177, 174, 174);
 }
 
 /* .react-chatbot-kit-chat-bot-message {

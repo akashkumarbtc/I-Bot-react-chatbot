@@ -7,21 +7,21 @@ const FormType = (props) => {
     {
       text: "Plain Vanilla Form",
       handler: (id) => {
-        props.actionProvider.handleVanillaForm(id);
+        props.actionProvider.handleISR1Form(id);
       },
       id: 1,
     },
     {
       text: "Fillable Form",
       handler: (id) => {
-        props.actionProvider.handleVanillaForm(id);
+        props.actionProvider.handleISR1Form(id);
       },
       id: 2,
     },
     {
       text: "Prefilled Form",
       handler: (id) => {
-        props.actionProvider.handleVanillaForm(id);
+        props.actionProvider.handleISR1Form(id);
       },
       id: 3,
     },

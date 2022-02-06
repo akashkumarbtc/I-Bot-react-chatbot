@@ -9,7 +9,7 @@ const Button = styled.button`
   text-align: center;
   cursor: pointer;
   font-size: 12px;
-  max-width: 130px
+  // max-width: 130px
   // min-width: 70px;
 `;
 

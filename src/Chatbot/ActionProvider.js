@@ -29,7 +29,7 @@ class ActionProvider {
 
   handleMain = () => {
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "options",
       }
@@ -41,7 +41,7 @@ class ActionProvider {
   handleKYC = () => {
     const Cmessage = this.createClientMessage("KYC");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleKYC",
       }
@@ -63,7 +63,7 @@ class ActionProvider {
   handleServiceRequestForm = () => {
     const Cmessage = this.createClientMessage("Service Request Forms");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select the service form below",
       {
         widget: "handleServiceRequestForm",
       }
@@ -77,13 +77,25 @@ class ActionProvider {
     KYCQuestions.map((question) => {
       if (question.id === id) {
         const Cmessage = this.createClientMessage(`${question.question}`);
-        const answer = this.createChatBotMessage(`${question.answer}`, {
-          widget: "handleKYC",
-        });
-        this.addMessageToState(Cmessage);
-        this.addMessageToState(answer);
-      }
-    });
+        let answer = null
+        if(id === 0 || id === 1 || id === 2){
+          answer = this.createChatBotMessage(`${question.answer}`, {
+            widget: "handleKYC",
+          });
+        }else if(id === 3){
+          answer = this.createChatBotMessage(`${question.answer}`, {
+            widget: "howToDoKYC",
+          });
+        } else{
+          answer = this.createChatBotMessage(`${question.answer}`, {
+            widget: "lastWorkflow",
+          });
+        }
+          this.addMessageToState(Cmessage);
+          this.addMessageToState(answer);
+        }
+      });
+    
   };
 
   handleFormQuestions = (id) => {
@@ -103,7 +115,7 @@ class ActionProvider {
   handleFormIsr1 = () => {
     const Cmessage = this.createClientMessage("Form ISR 1");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleFormIsr1",
       }
@@ -115,7 +127,7 @@ class ActionProvider {
   handleFormIsr2 = () => {
     const Cmessage = this.createClientMessage("Form ISR 2");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleFormIsr2",
       }
@@ -127,7 +139,7 @@ class ActionProvider {
   handleFormIsr3 = () => {
     const Cmessage = this.createClientMessage("Form ISR 3");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleFormIsr3",
       }
@@ -139,7 +151,7 @@ class ActionProvider {
   handleFormSh13 = () => {
     const Cmessage = this.createClientMessage("Form SH 13");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleFormSh13",
       }
@@ -151,7 +163,7 @@ class ActionProvider {
   handleFormSh14 = () => {
     const Cmessage = this.createClientMessage("Form SH 14");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleFormSh14",
       }
@@ -163,7 +175,7 @@ class ActionProvider {
   handleFormType = () => {
     const Cmessage = this.createClientMessage("Form");
     const message = this.createChatBotMessage(
-      "Please Select one of the options",
+      "Please select one of the options",
       {
         widget: "handleFormType",
       }
@@ -172,7 +184,7 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleVanillaForm = (id) => {
+  handleISR1Form = (id) => {
     
     let Cmessage = ""
     let pdf = "";

@@ -19,26 +19,26 @@ const KycOptions = (props) => {
       handler: (id) => props.actionProvider.handleKycQuestions(id),
       id: 3,
     },
-    {
-      text: "What is E-Sign",
-      handler: (id) => props.actionProvider.handleKycQuestions(id),
-      id: 4,
-    },
-    {
-      text: "what is PAN link to Aadhar",
-      handler: (id) => props.actionProvider.handleKycQuestions(id),
-      id: 5,
-    },
-    {
-      text: "Status of Pan Linked to Aadhar",
-      handler: (id) => props.actionProvider.handleKycQuestions(id),
-      id: 6,
-    },
-    {
-      text: "Main Menu",
-      handler: (id) => props.actionProvider.handleMain(id),
-      id: 0,
-    },
+    // {
+    //   text: "What is E-Sign",
+    //   handler: (id) => props.actionProvider.handleKycQuestions(id),
+    //   id: 4,
+    // },
+    // {
+    //   text: "what is PAN link to Aadhar",
+    //   handler: (id) => props.actionProvider.handleKycQuestions(id),
+    //   id: 5,
+    // },
+    // {
+    //   text: "Status of Pan Linked to Aadhar",
+    //   handler: (id) => props.actionProvider.handleKycQuestions(id),
+    //   id: 6,
+    // },
+    // {
+    //   text: "Main Menu",
+    //   handler: (id) => props.actionProvider.handleMain(id),
+    //   id: 0,
+    // },
   ];
 
   const buttonsMarkup = options.map((option) => (
