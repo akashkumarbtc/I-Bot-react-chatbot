@@ -16,11 +16,13 @@ const FormISR2 = (props) => {
       handler: (id) => {
         props.actionProvider.handleFormType(id);
       },
-      id: 0,
+      id: 2,
     },
     {
       text: "Back To Service Request Forms",
-      handler: (id) => { props.actionProvider.handleServiceRequestForm(id)},
+      handler: (id) => {
+        props.actionProvider.handleServiceRequestForm(id);
+      },
     },
   ];
 

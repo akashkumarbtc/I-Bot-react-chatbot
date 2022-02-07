@@ -12,7 +12,7 @@ const FormISR1 = (props) => {
     {
       text: "Form",
       handler: (id) => {props.actionProvider.handleFormType(id);},
-      id: 11,
+      id: 1,
     },
     {
       text: "Back To Service Request Forms",

@@ -12,9 +12,7 @@ const ViewMessage = ({pdf}) => {
       }, [pdf])
 
   return (
-  <div>
-      <p>View/ Download pdf file</p>
-  </div>
+      <p >View/ Download pdf file</p>
   );
 };
 

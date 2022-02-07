@@ -2,13 +2,25 @@ import KYCQuestions from "./Data/KYCQuestions";
 import FormsQuestions from "./Data/FormsQuestions";
 import PdfFormDisplay from "./components/Forms/PdfFormDisplay";
 import KycQues1 from "./components/KycQues1";
-import ISR1Vanilla from "../forms/ISR-1-Vanilla.pdf"
-import ISR2Vanilla from "../forms/ISR2Vanilla.pdf"
-import ISR1Filable from "../forms/ISR1-Fillable.pdf"
-import ViewMessage from './components/Forms/ViewMessage';
-import ISR1Prefilled from '../forms/ISR1-Prefilled.pdf';
-
-
+import ISR1Vanilla from "../forms/ISR-1-Vanilla.pdf";
+import ISR1Filable from "../forms/ISR1-Fillable.pdf";
+import ISR1Prefilled from "../forms/ISR1-Prefilled.pdf";
+import ISR2Vanilla from "../forms/ISR2Vanilla.pdf";
+import ISR2Filable from "../forms/ISR2-Fillable.pdf";
+import ISR2Prefilled from "../forms/ISR2-Prefilled.pdf";
+import ISR3Vanilla from "../forms/ISR-3-Vanilla.pdf";
+import ISR3Filable from "../forms/ISR3-Fillable.pdf";
+import ISR3Prefilled from "../forms/ISR3-Prefilled.pdf";
+import SH13Vanilla from "../forms/SH13-Vanilla.pdf";
+import SH13Filable from "../forms/SH13-Fillable.pdf";
+import SH13Prefilled from "../forms/SH13-Prefilled.pdf";
+import SH14Vanilla from "../forms/SH14-Vanilla.pdf";
+import SH14Filable from "../forms/SH14-Fillable.pdf";
+import SH14Prefilled from "../forms/SH14-Prefilled.pdf";
+import { useSelector, useDispatch } from "react-redux";
+import { set } from "../reducers/FormIdReducer";
+import ViewMessage from "./components/Forms/ViewMessage";
+import FormMsgComponent from "./components/Forms/FormMsgComponent";
 
 class ActionProvider {
   constructor(
@@ -25,7 +37,6 @@ class ActionProvider {
     this.stateRef = stateRef;
     this.createCustomMessage = createCustomMessage;
   }
-  
 
   handleMain = () => {
     const message = this.createChatBotMessage(
@@ -62,12 +73,9 @@ class ActionProvider {
 
   handleServiceRequestForm = () => {
     const Cmessage = this.createClientMessage("Service Request Forms");
-    const message = this.createChatBotMessage(
-      "Please select the service form below",
-      {
-        widget: "handleServiceRequestForm",
-      }
-    );
+    const message = this.createChatBotMessage("Choose any one option", {
+      widget: "handleServiceRequestForm",
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
@@ -77,27 +85,26 @@ class ActionProvider {
     KYCQuestions.map((question) => {
       if (question.id === id) {
         const Cmessage = this.createClientMessage(`${question.question}`);
-        let answer = null
-        if(id === 0 || id === 1 || id === 2){
+        let answer = null;
+        if (id === 0 || id === 1 || id === 2) {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "handleKYC",
           });
-        }else if(id === 3){
+        } else if (id === 3) {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "howToDoKYC",
           });
-        } else if(id === 7 || id === 8 ){
+        } else if (id === 7 || id === 8) {
           answer = this.createChatBotMessage(`${question.answer}`);
-        }else{
+        } else {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "lastWorkflow",
           });
         }
-          this.addMessageToState(Cmessage);
-          this.addMessageToState(answer);
-        }
-      });
-    
+        this.addMessageToState(Cmessage);
+        this.addMessageToState(answer);
+      }
+    });
   };
 
   handleFormQuestions = (id) => {
@@ -114,67 +121,52 @@ class ActionProvider {
     });
   };
 
-  handleFormIsr1 = () => {
+  handleFormIsr1 = (id) => {
     const Cmessage = this.createClientMessage("Form ISR 1");
-    const message = this.createChatBotMessage(
-      "Please select one of the options",
-      {
-        widget: "handleFormIsr1",
-      }
-    );
+    const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
+      widget: "handleFormIsr1",
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormIsr2 = () => {
+  handleFormIsr2 = (id) => {
     const Cmessage = this.createClientMessage("Form ISR 2");
-    const message = this.createChatBotMessage(
-      "Please select one of the options",
-      {
-        widget: "handleFormIsr2",
-      }
-    );
+    const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
+      widget: "handleFormIsr2",
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormIsr3 = () => {
+  handleFormIsr3 = (id) => {
     const Cmessage = this.createClientMessage("Form ISR 3");
-    const message = this.createChatBotMessage(
-      "Please select one of the options",
-      {
-        widget: "handleFormIsr3",
-      }
-    );
+    const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
+      widget: "handleFormIsr3",
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormSh13 = () => {
+  handleFormSh13 = (id) => {
     const Cmessage = this.createClientMessage("Form SH 13");
-    const message = this.createChatBotMessage(
-      "Please select one of the options",
-      {
-        widget: "handleFormSh13",
-      }
-    );
+    const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
+      widget: "handleFormSh13",
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormSh14 = () => {
+  handleFormSh14 = (id) => {
     const Cmessage = this.createClientMessage("Form SH 14");
-    const message = this.createChatBotMessage(
-      "Please select one of the options",
-      {
-        widget: "handleFormSh14",
-      }
-    );
+    const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
+      widget: "handleFormSh14",
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormType = () => {
+  handleFormType = (id) => {
     const Cmessage = this.createClientMessage("Form");
     const message = this.createChatBotMessage(
       "Please select one of the options",
@@ -187,37 +179,114 @@ class ActionProvider {
   };
 
   handleISR1Form = (id) => {
-    
-    let Cmessage = ""
+    let Cmessage = "";
     let pdf = "";
-    if(id===1){
+    if (id === 1) {
       Cmessage = this.createClientMessage("Vanilla Form");
       pdf = ISR1Vanilla;
-    }
-    else if(id===2){
+    } else if (id === 2) {
       Cmessage = this.createClientMessage("Fillable Form");
       pdf = ISR1Filable;
-    }
-    else if(id===3){
+    } else if (id === 3) {
       Cmessage = this.createClientMessage("Pre-filled Form");
       pdf = ISR1Prefilled;
     }
-    console.log("here before")
-    const message = this.createChatBotMessage(
-    <ViewMessage pdf = {pdf} />,
-    {
+    console.log("here before");
+    const message = this.createChatBotMessage(<ViewMessage pdf={pdf} />, {
       widget: "finalWorkflow",
-    }
-    )
+    });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  
+  handleISR2Form = (id) => {
+    let Cmessage = "";
+    let pdf = "";
+    if (id === 1) {
+      Cmessage = this.createClientMessage("Vanilla Form");
+      pdf = ISR2Vanilla;
+    } else if (id === 2) {
+      Cmessage = this.createClientMessage("Fillable Form");
+      pdf = ISR2Filable;
+    } else if (id === 3) {
+      Cmessage = this.createClientMessage("Pre-filled Form");
+      pdf = ISR2Prefilled;
+    }
+    console.log("here before");
+    const message = this.createChatBotMessage(<ViewMessage pdf={pdf} />, {
+      widget: "finalWorkflow",
+    });
+    this.addMessageToState(Cmessage);
+    this.addMessageToState(message);
+  };
+
+  handleISR3Form = (id) => {
+    let Cmessage = "";
+    let pdf = "";
+    if (id === 1) {
+      Cmessage = this.createClientMessage("Vanilla Form");
+      pdf = ISR3Vanilla;
+    } else if (id === 2) {
+      Cmessage = this.createClientMessage("Fillable Form");
+      pdf = ISR3Filable;
+    } else if (id === 3) {
+      Cmessage = this.createClientMessage("Pre-filled Form");
+      pdf = ISR3Prefilled;
+    }
+    console.log("here before");
+    const message = this.createChatBotMessage(<ViewMessage pdf={pdf} />, {
+      widget: "finalWorkflow",
+    });
+    this.addMessageToState(Cmessage);
+    this.addMessageToState(message);
+  };
+
+  handleSH13Form = (id) => {
+    let Cmessage = "";
+    let pdf = "";
+    if (id === 1) {
+      Cmessage = this.createClientMessage("Vanilla Form");
+      pdf = SH13Vanilla;
+    } else if (id === 2) {
+      Cmessage = this.createClientMessage("Fillable Form");
+      pdf = SH13Filable;
+    } else if (id === 3) {
+      Cmessage = this.createClientMessage("Pre-filled Form");
+      pdf = SH13Prefilled;
+    }
+    console.log("here before");
+    const message = this.createChatBotMessage(<ViewMessage pdf={pdf} />, {
+      widget: "finalWorkflow",
+    });
+    this.addMessageToState(Cmessage);
+    this.addMessageToState(message);
+  };
+
+  handleSH14Form = (id) => {
+    let Cmessage = "";
+    let pdf = "";
+    if (id === 1) {
+      Cmessage = this.createClientMessage("Vanilla Form");
+      pdf = SH14Vanilla;
+    } else if (id === 2) {
+      Cmessage = this.createClientMessage("Fillable Form");
+      pdf = SH14Filable;
+    } else if (id === 3) {
+      Cmessage = this.createClientMessage("Pre-filled Form");
+      pdf = SH14Prefilled;
+    }
+    console.log("here before");
+    const message = this.createChatBotMessage(<ViewMessage pdf={pdf} />, {
+      widget: "finalWorkflow",
+    });
+    this.addMessageToState(Cmessage);
+    this.addMessageToState(message);
+  };
+
   handleFillableForm = (id) => {
     const Cmessage = this.createClientMessage("Fillable Form");
     const message = this.createChatBotMessage(
-      <PdfFormDisplay id = {id} /> //use react components for this and for kycQues1
+      <PdfFormDisplay id={id} /> //use react components for this and for kycQues1
     );
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);

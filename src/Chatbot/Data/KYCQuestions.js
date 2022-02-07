@@ -8,14 +8,12 @@ const KYCQuestions = [
   {
     id: 2,
     question: "What happens if I dont update KYC",
-    answer:
-      `Non–updation of KYC - Folios wherein any ONE of the cited details/documents, (i.e PAN, Address with PIN code, Email address, Mobile Number, Bank Account details, Specimen Signature and Nomination) are not available on or after April 01, 2023, shall be frozen as per SEBI circular.`,
+    answer: `Non–updation of KYC - Folios wherein any ONE of the cited details/documents, (i.e PAN, Address with PIN code, Email address, Mobile Number, Bank Account details, Specimen Signature and Nomination) are not available on or after April 01, 2023, shall be frozen as per SEBI circular.`,
   },
   {
     id: 3,
     question: "How to do KYC",
-    answer:
-      `1. In-Person Verification (IPV): by producing the originals to the authorized person of the RTA, who will retain copy(ies) of the document(s). 
+    answer: `1. In-Person Verification (IPV): by producing the originals to the authorized person of the RTA, who will retain copy(ies) of the document(s).
        2. In hard copy: by furnishing self-attested photocopy(ies) of the relevant document, with date.                                                                                                   
        3. With e-sign:                                                    
         (a) In case your email is already registered with us, you may send the scanned copies of your KYC documents with e-sign at our dedicated email-id: kyc@linkintime.co.in Kindly mention the email subject line as KYC Updation - (Company Name) - Folio No:________________
@@ -42,14 +40,12 @@ const KYCQuestions = [
   {
     id: 7,
     question: "Thank You!",
-    answer:
-      "Welcome, Please rate us your experience with us.",
+    answer: "Welcome, Please rate us your experience with us.",
   },
   {
     id: 8,
     question: "I still have queries",
-    answer:
-      "Please reach out to abc@linkintime.co.in with your query.",
+    answer: "Please reach out to abc@linkintime.co.in with your query.",
   },
 ];
 

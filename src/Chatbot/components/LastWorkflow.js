@@ -22,6 +22,7 @@ const LastWorkflow = (props) => {
     {
       text: "Back to how to do KYC",
       handler: (id) => props.actionProvider.handleKycQuestions(id),
+      id:3,
     },
   ];
 
