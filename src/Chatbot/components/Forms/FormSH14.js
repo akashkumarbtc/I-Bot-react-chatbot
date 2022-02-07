@@ -12,7 +12,7 @@ const FormSH14 = (props) => {
       id: 5,
     },
     {
-      text: "Form",
+      text: "View or download form",
       handler: (id) => {
         props.actionProvider.handleFormType(id);
       },
@@ -20,8 +20,10 @@ const FormSH14 = (props) => {
     },
     {
       text: "Back To Service Request Forms",
-      handler: (id) => { props.actionProvider.handleServiceRequestForm(id)},
-    }
+      handler: (id) => {
+        props.actionProvider.handleServiceRequestForm(id);
+      },
+    },
   ];
 
   const buttonsMarkup = options.map((option) => (

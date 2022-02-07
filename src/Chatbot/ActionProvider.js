@@ -21,6 +21,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { set } from "../reducers/FormIdReducer";
 import ViewMessage from "./components/Forms/ViewMessage";
 import FormMsgComponent from "./components/Forms/FormMsgComponent";
+import ThankYou from "./components/ThankYou";
 
 class ActionProvider {
   constructor(
@@ -40,7 +41,7 @@ class ActionProvider {
 
   handleMain = () => {
     const message = this.createChatBotMessage(
-      "Please select one of the options",
+      "Please select an option from the main menu",
       {
         widget: "options",
       }
@@ -51,12 +52,9 @@ class ActionProvider {
 
   handleKYC = () => {
     const Cmessage = this.createClientMessage("KYC");
-    const message = this.createChatBotMessage(
-      "Please select one of the options",
-      {
-        widget: "handleKYC",
-      }
-    );
+    const message = this.createChatBotMessage("Please select a KYC question", {
+      widget: "handleKYC",
+    });
 
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
@@ -73,9 +71,12 @@ class ActionProvider {
 
   handleServiceRequestForm = () => {
     const Cmessage = this.createClientMessage("Service Request Forms");
-    const message = this.createChatBotMessage("Choose any one option", {
-      widget: "handleServiceRequestForm",
-    });
+    const message = this.createChatBotMessage(
+      "Choose any service request forms",
+      {
+        widget: "handleServiceRequestForm",
+      }
+    );
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
@@ -94,7 +95,9 @@ class ActionProvider {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "howToDoKYC",
           });
-        } else if (id === 7 || id === 8) {
+        } else if (id === 7) {
+          answer = this.createChatBotMessage(<ThankYou />);
+        } else if (id === 8) {
           answer = this.createChatBotMessage(`${question.answer}`);
         } else {
           answer = this.createChatBotMessage(`${question.answer}`, {
@@ -111,10 +114,10 @@ class ActionProvider {
     // eslint-disable-next-line array-callback-return
     FormsQuestions.map((question) => {
       if (question.id === id) {
-        const Cmessage = this.createClientMessage(`${question.question}`);
-        const answer = this.createChatBotMessage(`${question.answer}`, {
-          widget: `${question.name}`,
-        });
+          const Cmessage = this.createClientMessage(`${question.question}`);
+           const answer = this.createChatBotMessage(`${question.answer}`, {
+            widget: `${question.name}`,
+          });
         this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
       }
@@ -167,7 +170,7 @@ class ActionProvider {
   };
 
   handleFormType = (id) => {
-    const Cmessage = this.createClientMessage("Form");
+    const Cmessage = this.createClientMessage("View or Download");
     const message = this.createChatBotMessage(
       "Please select one of the options",
       {

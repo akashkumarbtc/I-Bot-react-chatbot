@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Styled/Button.Styled";
 import ButtonContainer from "../Styled/ButtonContainer.styled";
 import { useSelector } from "react-redux";
 
 const FormType = (props) => {
-  const {formTypeId} = useSelector((state) => state.setFormId);
+  const { formTypeId } = useSelector((state) => state.setFormId);
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
-    console.log(typeof(formTypeId));
+    console.log(typeof formTypeId);
     if (formTypeId === 1 || formTypeId === "1") {
       console.log("formTypeId");
       setOptions([
@@ -39,8 +39,8 @@ const FormType = (props) => {
             props.actionProvider.handleServiceRequestForm(id);
           },
         },
-      ])
-    }else if (formTypeId === 2 || formTypeId === "2") {
+      ]);
+    } else if (formTypeId === 2 || formTypeId === "2") {
       console.log("formTypeId");
       setOptions([
         {
@@ -70,7 +70,7 @@ const FormType = (props) => {
             props.actionProvider.handleServiceRequestForm(id);
           },
         },
-      ])
+      ]);
     } else if (formTypeId === 3 || formTypeId === "3") {
       console.log("formTypeId");
       setOptions([
@@ -101,7 +101,7 @@ const FormType = (props) => {
             props.actionProvider.handleServiceRequestForm(id);
           },
         },
-      ])
+      ]);
     } else if (formTypeId === 4 || formTypeId === "4") {
       console.log("formTypeId");
       setOptions([
@@ -132,7 +132,7 @@ const FormType = (props) => {
             props.actionProvider.handleServiceRequestForm(id);
           },
         },
-      ])
+      ]);
     } else if (formTypeId === 5 || formTypeId === "5") {
       console.log("formTypeId");
       setOptions([
@@ -163,15 +163,16 @@ const FormType = (props) => {
             props.actionProvider.handleServiceRequestForm(id);
           },
         },
-      ])
+      ]);
     }
-  }, [formTypeId])
+  }, []);
 
   console.log(formTypeId);
   console.log("len " + options.length);
   return (
     <ButtonContainer>
-      {formTypeId && options.length &&
+      {formTypeId &&
+        options.length > 0 &&
         options.map((option) => (
           <>
             <Button

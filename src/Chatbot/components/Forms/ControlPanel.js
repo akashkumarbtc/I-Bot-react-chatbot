@@ -64,11 +64,11 @@ const ControlPanel = (props) => {
     <div className="control-panel m-3 p-3 d-flex align-items-baseline justify-content-between">
       <div className="d-flex justify-content-between align-items-baseline">
         <i
-          className={`fas fa-fast-backward fa-2x mx-3 ${firstPageClass}`}
+          className={`fas fa-fast-backward fa-lg mx-3 ${firstPageClass}`}
           onClick={goToFirstPage}
         />
         <i
-          className={`fas fa-backward fa-2x mx-3 ${firstPageClass}`}
+          className={`fas fa-backward fa-lg mx-3 ${firstPageClass}`}
           onClick={goToPreviousPage}
         />
         <span>
@@ -85,28 +85,28 @@ const ControlPanel = (props) => {
           of {numPages}
         </span>
         <i
-          className={`fas fa-forward mx-3 fa-2x ${lastPageClass}`}
+          className={`fas fa-forward mx-3 fa-lg ${lastPageClass}`}
           onClick={goToNextPage}
         />
         <i
-          className={`fas fa-fast-forward mx-3 fa-2x ${lastPageClass}`}
+          className={`fas fa-fast-forward mx-3 fa-lg ${lastPageClass}`}
           onClick={goToLastPage}
         />
       </div>
       <div className="d-flex justify-content-between align-items-baseline">
         <i
-          className={`fas fa-search-minus mx-3 fa-2x ${zoomOutClass}`}
+          className={`fas fa-search-minus mx-3 fa-lg ${zoomOutClass}`}
           onClick={zoomOut}
         />
         <span>{(scale * 100).toFixed()}%</span>
         <i
-          className={`fas fa-search-plus mx-3 fa-2x ${zoomInClass}`}
+          className={`fas fa-search-plus mx-3 fa-lg ${zoomInClass}`}
           onClick={zoomIn}
         />
       </div>
       <div className="mx-3">
         <a href={file} download={true} title="download">
-          <i className="fas fa-file-download clickable fa-2x" />
+          <i className="fas fa-file-download clickable fa-lg" />
         </a>
       </div>
       <div className="mx-3">
@@ -120,7 +120,7 @@ const ControlPanel = (props) => {
           }}
           onClick={closeHandler}
         >
-          <i className="fas fa-times clickable fa-2x" />
+          <i className="fas fa-times clickable fa-lg" />
         </button>
       </div>
     </div>

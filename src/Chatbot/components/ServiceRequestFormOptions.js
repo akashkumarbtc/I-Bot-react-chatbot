@@ -32,7 +32,7 @@ const ServiceRequestFormOptions = (props) => {
     },
     {
       text: "Main Menu",
-      handler: (id) => (id) => props.actionProvider.handleMain(id),
+      handler: (id) => props.actionProvider.handleMain(id),
       id: 0,
     },
   ];

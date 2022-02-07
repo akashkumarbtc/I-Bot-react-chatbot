@@ -12,7 +12,7 @@ const FormSH13 = (props) => {
       id: 4,
     },
     {
-      text: "Form",
+      text: "View or download form",
       handler: (id) => {
         props.actionProvider.handleFormType(id);
       },

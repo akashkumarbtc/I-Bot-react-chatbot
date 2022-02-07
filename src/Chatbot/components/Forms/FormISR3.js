@@ -12,7 +12,7 @@ const FormISR3 = (props) => {
       id: 3,
     },
     {
-      text: "Form",
+      text: "View or download form",
       handler: (id) => {
         props.actionProvider.handleFormType(id);
       },

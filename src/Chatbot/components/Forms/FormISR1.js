@@ -10,7 +10,7 @@ const FormISR1 = (props) => {
       id: 1,
     },
     {
-      text: "Form",
+      text: "View or download form",
       handler: (id) => {props.actionProvider.handleFormType(id);},
       id: 1,
     },
