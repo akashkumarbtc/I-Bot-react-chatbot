@@ -40,6 +40,130 @@ const FormType = (props) => {
           },
         },
       ])
+    }else if (formTypeId === 2 || formTypeId === "2") {
+      console.log("formTypeId");
+      setOptions([
+        {
+          text: "Plain Vanilla Form",
+          handler: (id) => {
+            props.actionProvider.handleISR2Form(id);
+          },
+          id: 1,
+        },
+        {
+          text: "Fillable Form",
+          handler: (id) => {
+            props.actionProvider.handleISR2Form(id);
+          },
+          id: 2,
+        },
+        {
+          text: "Prefilled Form",
+          handler: (id) => {
+            props.actionProvider.handleISR2Form(id);
+          },
+          id: 3,
+        },
+        {
+          text: "Back To Service Request Forms",
+          handler: (id) => {
+            props.actionProvider.handleServiceRequestForm(id);
+          },
+        },
+      ])
+    } else if (formTypeId === 3 || formTypeId === "3") {
+      console.log("formTypeId");
+      setOptions([
+        {
+          text: "Plain Vanilla Form",
+          handler: (id) => {
+            props.actionProvider.handleISR3Form(id);
+          },
+          id: 1,
+        },
+        {
+          text: "Fillable Form",
+          handler: (id) => {
+            props.actionProvider.handleISR3Form(id);
+          },
+          id: 2,
+        },
+        {
+          text: "Prefilled Form",
+          handler: (id) => {
+            props.actionProvider.handleISR3Form(id);
+          },
+          id: 3,
+        },
+        {
+          text: "Back To Service Request Forms",
+          handler: (id) => {
+            props.actionProvider.handleServiceRequestForm(id);
+          },
+        },
+      ])
+    } else if (formTypeId === 4 || formTypeId === "4") {
+      console.log("formTypeId");
+      setOptions([
+        {
+          text: "Plain Vanilla Form",
+          handler: (id) => {
+            props.actionProvider.handleSH13Form(id);
+          },
+          id: 1,
+        },
+        {
+          text: "Fillable Form",
+          handler: (id) => {
+            props.actionProvider.handleSH13Form(id);
+          },
+          id: 2,
+        },
+        {
+          text: "Prefilled Form",
+          handler: (id) => {
+            props.actionProvider.handleSH13Form(id);
+          },
+          id: 3,
+        },
+        {
+          text: "Back To Service Request Forms",
+          handler: (id) => {
+            props.actionProvider.handleServiceRequestForm(id);
+          },
+        },
+      ])
+    } else if (formTypeId === 5 || formTypeId === "5") {
+      console.log("formTypeId");
+      setOptions([
+        {
+          text: "Plain Vanilla Form",
+          handler: (id) => {
+            props.actionProvider.handleSH14Form(id);
+          },
+          id: 1,
+        },
+        {
+          text: "Fillable Form",
+          handler: (id) => {
+            props.actionProvider.handleSH14Form(id);
+          },
+          id: 2,
+        },
+        {
+          text: "Prefilled Form",
+          handler: (id) => {
+            props.actionProvider.handleSH14Form(id);
+          },
+          id: 3,
+        },
+        {
+          text: "Back To Service Request Forms",
+          handler: (id) => {
+            props.actionProvider.handleServiceRequestForm(id);
+          },
+        },
+      ])
     }
   }, [formTypeId])
 

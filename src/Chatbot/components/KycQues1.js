@@ -25,7 +25,11 @@ const KycQues1 = () => {
     }
   };
 
-  const AnswerContainer = styled.div``;
+  const AnswerContainer = styled.div`
+  margin:5px 0px;
+  padding: 5px 0px;
+  border-bottom:0.2px solid white; 
+  `;
 
   return (
     <div>
