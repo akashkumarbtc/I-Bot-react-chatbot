@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
 import {DisplayPdf} from "./DisplayPdfReducers";
-import {setFormId} from "./FormIdReducer"
+import {FormId} from "./FormIdReducer"
 
 
 const rootReducer = combineReducers({
     displayPDF: DisplayPdf,
-    setFormId: setFormId
+    setFormId: FormId
 
 })
 

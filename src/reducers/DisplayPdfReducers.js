@@ -1,5 +1,4 @@
-import React from 'react';
-import PdfFormDisplay from "../forms/ISR-1-Vanilla.pdf";
+
 const initState = {
     setDisplay: false,
     pdfFile: null

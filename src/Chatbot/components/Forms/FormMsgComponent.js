@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { setFormId } from "../../../reducers/FormIdReducer";
+import { setFormID } from "../../../actions/FornIdAction";
 import { useSelector, useDispatch } from "react-redux";
 
 function FormMsgComponent({ id }) {
-  const formId = useSelector((state) => state.setFormId);
+  const formTypeId = useSelector((state) => state.setFormId);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setFormId(id));
+    dispatch(setFormID(id));
   }, []);
 
   return <p>Choose any one option</p>;

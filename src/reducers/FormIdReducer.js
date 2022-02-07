@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
 
-export const formIdSlice = createSlice({
-  name: 'formId',
-  initialState: {
-    value: 0,
-  },
-  reducers: {
-    setFormId: (state, action) => {
-      state.value = action.payload
-    },
-  },
-})
+const initState = {
+ formTypeId: 0
+};
+export const FormId = (state=initState, action) => {
 
-export const { setFormId } = formIdSlice.actions
+  switch (action.type) {
+      case "SET_FORM_ID": 
+          return { formTypeId: action.payload}
 
-export default formIdSlice.reducer
+      case "SET_DISPLAY_TRUE": 
+          return { formTypeId: 0 }
+
+      default:
+          return state
+  }
+}
