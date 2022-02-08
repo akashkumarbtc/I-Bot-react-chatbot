@@ -20,8 +20,8 @@ import SH14Prefilled from "../forms/SH14-Prefilled.pdf";
 import ViewMessage from "./components/Forms/ViewMessage";
 import FormMsgComponent from "./components/Forms/FormMsgComponent";
 import ThankYou from "./components/ThankYou";
-import HOwToDoKycAnswer from './components/HOwToDoKycAnswer';
-
+import HOwToDoKycAnswer from "./components/HOwToDoKycAnswer";
+import Nominations from "./components/Nominations";
 
 class ActionProvider {
   constructor(
@@ -50,7 +50,7 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleKYC = () => {
+  handleKYC = (id) => {
     const Cmessage = this.createClientMessage("KYC");
     const message = this.createChatBotMessage("Please select a KYC question", {
       widget: "handleKYC",
@@ -81,6 +81,16 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
+  handleNomination = () => {
+    const message = this.createChatBotMessage(
+      "Choose any service request forms",
+      {
+        widget: "handleNomination",
+      }
+    );
+    this.addMessageToState(message);
+  };
+
   handleKycQuestions = (id) => {
     // eslint-disable-next-line array-callback-return
     KYCQuestions.map((question) => {
@@ -91,8 +101,7 @@ class ActionProvider {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "handleKYC",
           });
-        }
-        else if (id === 3) {
+        } else if (id === 3) {
           answer = this.createChatBotMessage(<HOwToDoKycAnswer />, {
             widget: "howToDoKYC",
           });
@@ -115,10 +124,10 @@ class ActionProvider {
     // eslint-disable-next-line array-callback-return
     FormsQuestions.map((question) => {
       if (question.id === id) {
-          const Cmessage = this.createClientMessage(`${question.question}`);
-           const answer = this.createChatBotMessage(`${question.answer}`, {
-            widget: `${question.name}`,
-          });
+        const Cmessage = this.createClientMessage(`${question.question}`);
+        const answer = this.createChatBotMessage(`${question.answer}`, {
+          widget: `${question.name}`,
+        });
         this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
       }

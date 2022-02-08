@@ -45,7 +45,6 @@
 .react-chatbot-kit-chat-input {
   margin: 5px;
   padding: 10px;
-  pointer-events: none;
   background-color: whitesmoke;
 }
 
@@ -53,7 +52,6 @@
   margin: 5px 5px 5px 0px;
   width: 60px;
   background-color: white;
-  pointer-events: none;
 }
 .react-chatbot-kit-chat-message-container {
   overflow-x: hidden;
