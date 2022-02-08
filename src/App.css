@@ -36,7 +36,11 @@
   width: auto;
   max-width: 100%;
   min-width: none;
-  background-color: #2898ec;
+  background-color: #6f6f70;
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {
+  border-right: 8px solid #6f6f70;
 }
 .react-chatbot-kit-chat-input {
   margin: 5px;
@@ -60,7 +64,7 @@
 }
 
 .react-chatbot-kit-chat-btn-send-icon {
-  fill: #2898ec;
+  fill: #6f6f70;
   width: 20px;
 }
 
@@ -131,7 +135,7 @@
   height: 70px;
   width: 70px;
   border-radius: 100px;
-  background: #2898ec;
+  background: #6f6f70;
   border: none;
   color: white;
   margin-top: 10px;

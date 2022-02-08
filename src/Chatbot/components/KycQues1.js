@@ -25,20 +25,41 @@ const KycQues1 = () => {
     }
   };
 
+  const removeHandler = (id) => {
+    if(id === 2){
+      setAnswer2("")
+    }
+    else if(id === 3){
+      setAnswer3("")
+    }
+    else if(id === 4){
+      setAnswer4("")
+    }
+    else if(id === 5){
+      setAnswer5("")
+    }
+
+  }
+
   const AnswerContainer = styled.div`
   margin:5px 0px;
   padding: 5px 0px;
   border-bottom:0.2px solid white; 
   `;
 
+  const ReadLess = styled.p`
+  color: navajowhite;
+  cursor: pointer;
+  `;
+
   return (
     <div>
       <>
         <AnswerContainer>{answer1}</AnswerContainer>
-        {answer2 ? <AnswerContainer>{answer2}</AnswerContainer> : <></> }
-        {answer3 ? <AnswerContainer>{answer3}</AnswerContainer> : <></> }
-        {answer4 ? <AnswerContainer>{answer4}</AnswerContainer> : <></> }
-        {answer5 ? <AnswerContainer>{answer5}</AnswerContainer> : <></> }
+        {answer2 ? (<AnswerContainer>{answer2}<ReadLess onClick={() => removeHandler(2)}>Read Less ...</ReadLess></AnswerContainer> ) : <></> }
+        {answer3 ? <AnswerContainer>{answer3}<ReadLess onClick={() => removeHandler(3)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
+        {answer4 ? <AnswerContainer>{answer4}<ReadLess onClick={() => removeHandler(4)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
+        {answer5 ? <AnswerContainer>{answer5}<ReadLess onClick={() => removeHandler(5)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
         <p
           onClick={handleId}
           style={{ color: "navajowhite", cursor: "pointer" }}
