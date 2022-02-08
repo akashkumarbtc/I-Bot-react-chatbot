@@ -36,6 +36,7 @@
   width: auto;
   max-width: 100%;
   min-width: none;
+  background-color: #2898ec;
 }
 .react-chatbot-kit-chat-input {
   margin: 5px;
@@ -78,7 +79,7 @@
   background-color: white;
   border-radius: 5px;
   padding: 1rem;
-  width: 90%;
+  width: 95%;
   margin: 0.5rem;
   display: flex;
   /* flex-direction: column; */
@@ -141,7 +142,9 @@
 }
 
 .pdf-display {
-  height: 90vh;
+  max-height: 90vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
   /* background-color: #c9deee; */
   max-width: 35rem;
 }
@@ -180,4 +183,22 @@
 
 .react-chatbot-kit-chat-message-container {
   height: 436px !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7);
+  border-radius: 20px;
+  border: transparent;
 }

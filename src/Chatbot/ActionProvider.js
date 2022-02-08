@@ -17,11 +17,11 @@ import SH13Prefilled from "../forms/SH13-Prefilled.pdf";
 import SH14Vanilla from "../forms/SH14-Vanilla.pdf";
 import SH14Filable from "../forms/SH14-Fillable.pdf";
 import SH14Prefilled from "../forms/SH14-Prefilled.pdf";
-import { useSelector, useDispatch } from "react-redux";
-import { set } from "../reducers/FormIdReducer";
 import ViewMessage from "./components/Forms/ViewMessage";
 import FormMsgComponent from "./components/Forms/FormMsgComponent";
 import ThankYou from "./components/ThankYou";
+import HOwToDoKycAnswer from './components/HOwToDoKycAnswer';
+
 
 class ActionProvider {
   constructor(
@@ -91,8 +91,9 @@ class ActionProvider {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: "handleKYC",
           });
-        } else if (id === 3) {
-          answer = this.createChatBotMessage(`${question.answer}`, {
+        }
+        else if (id === 3) {
+          answer = this.createChatBotMessage(<HOwToDoKycAnswer />, {
             widget: "howToDoKYC",
           });
         } else if (id === 7) {
@@ -172,7 +173,7 @@ class ActionProvider {
   handleFormType = (id) => {
     const Cmessage = this.createClientMessage("View or Download");
     const message = this.createChatBotMessage(
-      "Please select one of the options",
+      "Please select the type of form",
       {
         widget: "handleFormType",
       }

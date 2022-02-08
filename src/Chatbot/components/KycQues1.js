@@ -35,15 +35,15 @@ const KycQues1 = () => {
     <div>
       <>
         <AnswerContainer>{answer1}</AnswerContainer>
-        <AnswerContainer>{answer2}</AnswerContainer>
-        <AnswerContainer>{answer3}</AnswerContainer>
-        <AnswerContainer>{answer4}</AnswerContainer>
-        <AnswerContainer>{answer5}</AnswerContainer>
+        {answer2 ? <AnswerContainer>{answer2}</AnswerContainer> : <></> }
+        {answer3 ? <AnswerContainer>{answer3}</AnswerContainer> : <></> }
+        {answer4 ? <AnswerContainer>{answer4}</AnswerContainer> : <></> }
+        {answer5 ? <AnswerContainer>{answer5}</AnswerContainer> : <></> }
         <p
           onClick={handleId}
           style={{ color: "navajowhite", cursor: "pointer" }}
         >
-          Read more...
+          {answer5 ? "" : "Read more..."}
         </p>
       </>
     </div>
