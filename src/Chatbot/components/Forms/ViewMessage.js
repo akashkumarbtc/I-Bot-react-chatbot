@@ -7,7 +7,6 @@ const ViewMessage = ({pdf}) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log("here")
         dispatch(displayPdfFile(pdf))
       }, [pdf])
 

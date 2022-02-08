@@ -19,6 +19,11 @@ const KycOptions = (props) => {
       handler: (id) => props.actionProvider.handleKycQuestions(id),
       id: 3,
     },
+    {
+      text: "Main Menu",
+      handler: (id) => props.actionProvider.handleMain(id),
+      id: 0,
+    },
     // {
     //   text: "What is E-Sign",
     //   handler: (id) => props.actionProvider.handleKycQuestions(id),

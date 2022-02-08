@@ -5,32 +5,26 @@ class MessageParser {
   }
 
   parse(message) {
-    console.log(message);
     const lowercase = message.toLowerCase();
 
-    if (message) {
-    }
-    console.log(this.state.clientMsg);
     if (lowercase === "kyc") {
-      this.state.clientMsg = true;
-      this.actionProvider.handleKYC();
+      this.actionProvider.handleKYC(true);
     } else if (lowercase === "service request forms") {
-      this.actionProvider.handleServiceRequestForm();
+      this.actionProvider.handleServiceRequestForm(true);
     } else if (lowercase.includes("what is kyc")) {
-      this.state.clientMsg = true;
-      this.actionProvider.handleKYCQues1();
+      this.actionProvider.handleKYCQues1(true);
     } else if (
       lowercase.includes("non-updation of kyc") ||
       lowercase.includes("non updation of kyc")
     ) {
-      this.actionProvider.handleKycQuestions(2);
+      this.actionProvider.handleKycQuestions(2, true);
     } else if (
       lowercase.includes("registeration of kyc") ||
       lowercase.includes("how to do kyc")
     ) {
-      this.actionProvider.handleKycQuestions(3);
+      this.actionProvider.handleKycQuestions(3, true);
     } else if (lowercase.includes("status of pan linked to aadhar")) {
-      this.actionProvider.handleKycQuestions(6);
+      this.actionProvider.handleKycQuestions(6, true);
     } else if (lowercase === "nomination") {
       this.actionProvider.handleNomination();
     } else if (
@@ -38,35 +32,35 @@ class MessageParser {
       lowercase.includes("register pan") ||
       lowercase.includes("update kyc")
     ) {
-      this.actionProvider.handleFormQuestions(1);
+      this.actionProvider.handleFormQuestions(1, true);
     } else if (
       lowercase.includes("change/updation of bank details") ||
       lowercase.includes("updation of bank details") ||
       lowercase.includes("change of bank details")
     ) {
-      this.actionProvider.handleFormQuestions(2);
+      this.actionProvider.handleFormQuestions(2, true);
     } else if (
       lowercase.includes("opt-out of nomination") ||
       lowercase.includes("opt out of nomination")
     ) {
-      this.actionProvider.handleFormQuestions(3);
+      this.actionProvider.handleFormQuestions(3, true);
     } else if (
       lowercase.includes("registration of new nomination") ||
       lowercase.includes("new nomination") ||
       lowercase.includes("registration nomination")
     ) {
-      this.actionProvider.handleFormQuestions(4);
+      this.actionProvider.handleFormQuestions(4, true);
     } else if (
       lowercase.includes("cancellation / change in nomination") ||
       lowercase.includes("cancel nomination") ||
       lowercase.includes("cancellation in nomination") ||
       lowercase.includes("change in nomination")
     ) {
-      this.actionProvider.handleFormQuestions(5);
+      this.actionProvider.handleFormQuestions(5, true);
     } else if (lowercase.includes("main menu")) {
       this.actionProvider.handleMain(5);
     } else {
-      this.actionProvider.handleDefaultMsg();
+      this.actionProvider.handleDefaultMsg(true);
     }
   }
 }

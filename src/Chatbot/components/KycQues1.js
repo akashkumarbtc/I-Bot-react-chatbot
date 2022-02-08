@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import KYCQuestions from "./../Data/KYCQuestions";
 import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import { displayPdfFile } from '../../actions/PdfDisplayActions';
+import SEBI from '../../forms/SEBI.PDF';
+
+
 const KycQues1 = () => {
   const [Id, setId] = useState(0);
   const [answer1] = useState(KYCQuestions[0].answer);
@@ -25,17 +30,18 @@ const KycQues1 = () => {
     }
   };
 
-  const removeHandler = (id) => {
-    if(id === 2){
+  const readLessHandler = () => {
+    console.log(Id)
+    if(Id === 2){
       setAnswer2("")
     }
-    else if(id === 3){
+    else if(Id === 3){
       setAnswer3("")
     }
-    else if(id === 4){
+    else if(Id === 4){
       setAnswer4("")
     }
-    else if(id === 5){
+    else if(Id === 5){
       setAnswer5("")
     }
     setId(Id - 1)
@@ -52,20 +58,34 @@ const KycQues1 = () => {
   color: green;
   cursor: pointer;
   `;
+  const dispatch = useDispatch()
+  const documentHandler = () => {
+    dispatch(displayPdfFile(SEBI))
+  }
 
   return (
     <div>
       <>
-        <AnswerContainer>{answer1}</AnswerContainer>
-        {answer2 ? (<AnswerContainer>{answer2}<ReadLess onClick={() => removeHandler(2)}>Read Less ...</ReadLess></AnswerContainer> ) : <></> }
-        {answer3 ? <AnswerContainer>{answer3}<ReadLess onClick={() => removeHandler(3)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
-        {answer4 ? <AnswerContainer>{answer4}<ReadLess onClick={() => removeHandler(4)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
-        {answer5 ? <AnswerContainer>{answer5}<ReadLess onClick={() => removeHandler(5)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
+        <AnswerContainer>
+          {answer1}
+          <p style={{color:"purple", cursor: "pointer"}} onClick={documentHandler}>Read Sebi Circular dated 3 Nov 2021 & clarification thereof.</p>
+          </AnswerContainer>
+        {answer2 ? (<AnswerContainer>{answer2}</AnswerContainer> ) : <></> }
+        {answer3 ? <AnswerContainer>{answer3}</AnswerContainer> : <></> }
+        {answer4 ? <AnswerContainer>{answer4}</AnswerContainer> : <></> }
+        {answer5 ? <AnswerContainer>{answer5}</AnswerContainer> : <></> }
+        
+        <p
+          onClick={readLessHandler}
+          style={{ color: "blue", cursor: "pointer" }}
+        >
+          {Id > 1 ? "Read less..." : ""}
+        </p>
         <p
           onClick={handleId}
           style={{ color: "blue", cursor: "pointer" }}
         >
-          {answer5 ? "" : "Read more..."}
+          {Id < 5 ? "Read more..." : "" }
         </p>
       </>
     </div>

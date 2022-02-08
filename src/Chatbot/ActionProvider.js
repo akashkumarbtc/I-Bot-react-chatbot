@@ -48,38 +48,36 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleKYC = (id) => {
-    let Cmessage;
-    console.log(this.stateRef.clientMsg);
-    if (!this.stateRef.clientMsg) {
+  handleKYC = (clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
       Cmessage = this.createClientMessage("KYC");
+      this.addMessageToState(Cmessage);
     }
     const message = this.createChatBotMessage("Please select a KYC question", {
       widget: "handleKYC",
     });
 
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
-    this.stateRef.clientMsg = false;
   };
 
-  handleKYCQues1 = () => {
-    let Cmessage;
-    if (!this.stateRef.clientMsg) {
+  handleKYCQues1 = (clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
       Cmessage = this.createClientMessage("What is KYC?");
+      this.addMessageToState(Cmessage);
     }
     const message = this.createChatBotMessage(<KycQues1 />, {
       widget: "handleKYC",
     });
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
-    this.stateRef.clientMsg = false;
   };
 
-  handleServiceRequestForm = () => {
-    let Cmessage;
-    if (!this.stateRef.clientMsg) {
+  handleServiceRequestForm = (clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
       Cmessage = this.createClientMessage("Service Request Forms");
+      this.addMessageToState(Cmessage);
     }
     const message = this.createChatBotMessage(
       "Choose any service request forms",
@@ -87,9 +85,7 @@ class ActionProvider {
         widget: "handleServiceRequestForm",
       }
     );
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
-    this.stateRef.clientMsg = false;
   };
 
   handleNomination = () => {
@@ -102,13 +98,14 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleKycQuestions = (id) => {
+  handleKycQuestions = (id, clientMsg=false) => {
     // eslint-disable-next-line array-callback-return
     KYCQuestions.map((question) => {
       if (question.id === id) {
-        let Cmessage;
-        if (!this.stateRef.clientMsg) {
+        let Cmessage = null;
+        if (!clientMsg) {
           Cmessage = this.createClientMessage(`${question.question}`);
+          this.addMessageToState(Cmessage);
         }
         let answer = null;
         if (id === 0 || id === 1 || id === 2) {
@@ -119,6 +116,14 @@ class ActionProvider {
           answer = this.createChatBotMessage(<HOwToDoKycAnswer id={id} />, {
             widget: "howToDoKYC",
           });
+        }else if (id === 4) {
+          answer = this.createChatBotMessage(<HOwToDoKycAnswer id={id} />, {
+            widget: "lastWorkflow",
+          });
+        }else if (id === 6) {
+          answer = this.createChatBotMessage(<HOwToDoKycAnswer id={id} />, {
+            widget: "lastWorkflow",
+          });
         } else if (id === 7) {
           answer = this.createChatBotMessage(<ThankYou />);
         } else if (id === 8) {
@@ -128,20 +133,20 @@ class ActionProvider {
             widget: "lastWorkflow",
           });
         }
-        this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
-        this.stateRef.clientMsg = false;
+  
       }
     });
   };
 
-  handleFormQuestions = (id) => {
+  handleFormQuestions = (id, clientMsg=false) => {
     // eslint-disable-next-line array-callback-return
     FormsQuestions.map((question) => {
       if (question.id === id) {
-        let Cmessage;
-        if (!this.stateRef.clientMsg) {
+        let Cmessage = null;
+        if (!clientMsg) {
           Cmessage = this.createClientMessage(`${question.question}`);
+          this.addMessageToState(Cmessage);
         }
         let answer = null;
         if (id === 1) {
@@ -154,9 +159,8 @@ class ActionProvider {
           });
         }
 
-        this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
-        this.stateRef.clientMsg = false;
+  
       }
     });
   };
@@ -332,9 +336,12 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleDefaultMsg = () => {
-    const message = this.createChatBotMessage("Please enter a valid statement");
-    this.addMessageToState(message);
+  handleDefaultMsg = (clientMsg=false) => {
+    if(clientMsg){
+      const message = this.createChatBotMessage("Please enter a valid statement");
+      this.addMessageToState(message);
+    }
+    
   };
 
   addMessageToState = (message) => {

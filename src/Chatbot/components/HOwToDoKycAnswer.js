@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 const HOwToDoKycAnswer = ({ id }) => {
   const [howToDoKyc, setHowToDoKyc] = useState(false);
   const [updateKYC, setupdateKYC] = useState(false);
+  const [esign, setEsign] = useState(false);
+  const [status, setStatus] = useState(false);
 
   console.log(id);
   useEffect(() => {
@@ -11,6 +13,12 @@ const HOwToDoKycAnswer = ({ id }) => {
     }
     if (id === 1) {
       setupdateKYC(true);
+    }
+    if (id === 4) {
+      setEsign(true);
+    }
+    if (id === 6) {
+      setStatus(true);
     }
   }, [id]);
   return (
@@ -32,14 +40,14 @@ const HOwToDoKycAnswer = ({ id }) => {
               <li>
                 In case your email is already registered with us, you may send
                 the scanned copies of your KYC documents with e-sign at our
-                dedicated email-id: kyc@linkintime.co.in Kindly mention the
+                dedicated email-id: <a>kyc@linkintime.co.in</a> Kindly mention the
                 email subject line as KYC Updation - (Company Name) - Folio
                 No:________________
               </li>
               <li>
                 <p>
                   Investors can also upload KYC documents with e-sign on our
-                  website https://www.linkintime.co.in - Investor Services - KYC
+                  website <a target="_blank" href="https://www.linkintime.co.in">https://www.linkintime.co.in</a> - Investor Services - KYC
                   Compliance.
                 </p>
               </li>
@@ -61,9 +69,17 @@ const HOwToDoKycAnswer = ({ id }) => {
             <li>E-mail id.</li>
           </ul>
         </>
-      ) : (
-        ""
-      )}
+      ) : 
+      esign ? (
+        <>
+        <p style={{ marginLeft: "20px" }}>E-Sign is an integrated service that facilitates issuing a Digital Signature Certificate and performing signing of requested data by e-sign user. You may approach any of the impaneled e-sign service providers available on <a target="_blank" href="https://cca.gov.in/">https://cca.gov.in/</a> to obtain an e-sign.</p>
+        </>
+      ) :
+      status ? (
+        <p style={{ marginLeft: "10px" }}>To know the status of your Pan Linked to Aadhaar check on this link: <a target="_blank" href="https://www.incometax.gov.in/iec/foportal">https://www.incometax.gov.in/iec/foportal</a></p>
+      ) :
+          ""
+        }
     </div>
   );
 };

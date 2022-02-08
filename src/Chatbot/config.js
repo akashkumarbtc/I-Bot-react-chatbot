@@ -24,9 +24,6 @@ const config = {
       }
     ),
   ],
-  state: {
-    clientMsg : false
-  },
   widgets: [
     {
       widgetName: "options",
