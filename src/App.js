@@ -16,6 +16,7 @@ const Logo = styled.span`
   width: 35px;
   border-radius: 50%;
   font-weight: bold;
+  
 `;
 
 function App() {

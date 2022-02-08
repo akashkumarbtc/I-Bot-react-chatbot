@@ -21,8 +21,6 @@ import ViewMessage from "./components/Forms/ViewMessage";
 import FormMsgComponent from "./components/Forms/FormMsgComponent";
 import ThankYou from "./components/ThankYou";
 import HOwToDoKycAnswer from "./components/HOwToDoKycAnswer";
-import Nominations from "./components/Nominations";
-
 class ActionProvider {
   constructor(
     createChatBotMessage,
@@ -51,27 +49,38 @@ class ActionProvider {
   };
 
   handleKYC = (id) => {
-    const Cmessage = this.createClientMessage("KYC");
+    let Cmessage;
+    console.log(this.stateRef.clientMsg);
+    if (!this.stateRef.clientMsg) {
+      Cmessage = this.createClientMessage("KYC");
+    }
     const message = this.createChatBotMessage("Please select a KYC question", {
       widget: "handleKYC",
     });
 
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
+    this.stateRef.clientMsg = false;
   };
 
   handleKYCQues1 = () => {
-    console.log(this.setState)
-    const Cmessage = this.createClientMessage("What is KYC?");
+    let Cmessage;
+    if (!this.stateRef.clientMsg) {
+      Cmessage = this.createClientMessage("What is KYC?");
+    }
     const message = this.createChatBotMessage(<KycQues1 />, {
       widget: "handleKYC",
     });
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
+    this.stateRef.clientMsg = false;
   };
 
   handleServiceRequestForm = () => {
-    const Cmessage = this.createClientMessage("Service Request Forms");
+    let Cmessage;
+    if (!this.stateRef.clientMsg) {
+      Cmessage = this.createClientMessage("Service Request Forms");
+    }
     const message = this.createChatBotMessage(
       "Choose any service request forms",
       {
@@ -80,6 +89,7 @@ class ActionProvider {
     );
     this.addMessageToState(Cmessage);
     this.addMessageToState(message);
+    this.stateRef.clientMsg = false;
   };
 
   handleNomination = () => {
@@ -96,7 +106,10 @@ class ActionProvider {
     // eslint-disable-next-line array-callback-return
     KYCQuestions.map((question) => {
       if (question.id === id) {
-        const Cmessage = this.createClientMessage(`${question.question}`);
+        let Cmessage;
+        if (!this.stateRef.clientMsg) {
+          Cmessage = this.createClientMessage(`${question.question}`);
+        }
         let answer = null;
         if (id === 0 || id === 1 || id === 2) {
           answer = this.createChatBotMessage(`${question.answer}`, {
@@ -117,6 +130,7 @@ class ActionProvider {
         }
         this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
+        this.stateRef.clientMsg = false;
       }
     });
   };
@@ -125,20 +139,24 @@ class ActionProvider {
     // eslint-disable-next-line array-callback-return
     FormsQuestions.map((question) => {
       if (question.id === id) {
-        const Cmessage = this.createClientMessage(`${question.question}`);
+        let Cmessage;
+        if (!this.stateRef.clientMsg) {
+          Cmessage = this.createClientMessage(`${question.question}`);
+        }
         let answer = null;
-        if (id === 1){
+        if (id === 1) {
           answer = this.createChatBotMessage(<HOwToDoKycAnswer id={id} />, {
             widget: `${question.name}`,
           });
-        }else{
+        } else {
           answer = this.createChatBotMessage(`${question.answer}`, {
             widget: `${question.name}`,
           });
         }
-       
+
         this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
+        this.stateRef.clientMsg = false;
       }
     });
   };
@@ -311,6 +329,11 @@ class ActionProvider {
       <PdfFormDisplay id={id} /> //use react components for this and for kycQues1
     );
     this.addMessageToState(Cmessage);
+    this.addMessageToState(message);
+  };
+
+  handleDefaultMsg = () => {
+    const message = this.createChatBotMessage("Please enter a valid statement");
     this.addMessageToState(message);
   };
 

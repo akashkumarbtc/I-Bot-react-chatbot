@@ -24,10 +24,9 @@ const config = {
       }
     ),
   ],
-  // state: {
-  //   setDisplayForm: "false",
-  //   setPdfFile : "" ,
-  // },
+  state: {
+    clientMsg : false
+  },
   widgets: [
     {
       widgetName: "options",

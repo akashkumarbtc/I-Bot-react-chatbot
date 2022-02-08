@@ -145,6 +145,13 @@
   top: 10%;
 }
 
+.react-chatbot-kit-user-chat-message {
+  font-family: "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  color: black;
+  font-weight: normal;
+}
+
 .main-button {
   height: 70px;
   width: 70px;
@@ -156,7 +163,7 @@
   margin-top: 10px;
   position: fixed;
   right: 13%;
-  bottom: 4%;
+  bottom: 1%;
   cursor: pointer;
 }
 
