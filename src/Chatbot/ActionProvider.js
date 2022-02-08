@@ -61,6 +61,7 @@ class ActionProvider {
   };
 
   handleKYCQues1 = () => {
+    console.log(this.setState)
     const Cmessage = this.createClientMessage("What is KYC?");
     const message = this.createChatBotMessage(<KycQues1 />, {
       widget: "handleKYC",
@@ -102,7 +103,7 @@ class ActionProvider {
             widget: "handleKYC",
           });
         } else if (id === 3) {
-          answer = this.createChatBotMessage(<HOwToDoKycAnswer />, {
+          answer = this.createChatBotMessage(<HOwToDoKycAnswer id={id} />, {
             widget: "howToDoKYC",
           });
         } else if (id === 7) {
@@ -125,9 +126,17 @@ class ActionProvider {
     FormsQuestions.map((question) => {
       if (question.id === id) {
         const Cmessage = this.createClientMessage(`${question.question}`);
-        const answer = this.createChatBotMessage(`${question.answer}`, {
-          widget: `${question.name}`,
-        });
+        let answer = null;
+        if (id === 1){
+          answer = this.createChatBotMessage(<HOwToDoKycAnswer id={id} />, {
+            widget: `${question.name}`,
+          });
+        }else{
+          answer = this.createChatBotMessage(`${question.answer}`, {
+            widget: `${question.name}`,
+          });
+        }
+       
         this.addMessageToState(Cmessage);
         this.addMessageToState(answer);
       }

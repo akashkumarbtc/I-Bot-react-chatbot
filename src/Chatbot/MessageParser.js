@@ -11,43 +11,53 @@ class MessageParser {
     if (lowercase === "kyc") {
       this.actionProvider.handleKYC();
     }
-    if (lowercase === "service request forms") {
+    else if (lowercase === "service request forms") {
       this.actionProvider.handleServiceRequestForm();
     }
 
-    if (lowercase.includes("what is kyc")) {
+    else if (lowercase.includes("what is kyc")) {
       this.actionProvider.handleKYCQues1();
     }
 
-    if (lowercase.includes("non-updation of kyc")) {
+    else if (lowercase.includes("non-updation of kyc") || lowercase.includes("non updation of kyc")) {
       this.actionProvider.handleKycQuestions(2);
     }
-    if (lowercase.includes("registeration of kyc")) {
+    else if (lowercase.includes("registeration of kyc") || lowercase.includes("how to do kyc") ) {
       this.actionProvider.handleKycQuestions(3);
     }
-    if (lowercase.includes("status of pan linked to aadhar")) {
+    else if (lowercase.includes("status of pan linked to aadhar")) {
       this.actionProvider.handleKycQuestions(6);
     }
 
-    if (lowercase === "nomination") {
+    else if (lowercase === "nomination") {
       this.actionProvider.handleNomination();
     }
 
-    if (lowercase.includes("register pan/update kyc")) {
+    else if (lowercase.includes("register pan/update kyc") 
+        || lowercase.includes("register pan") 
+        || lowercase.includes("update kyc")) {
       this.actionProvider.handleFormQuestions(1);
     }
 
-    if (lowercase.includes("change/updation of bank details")) {
+    else if (lowercase.includes("change/updation of bank details")
+        || (lowercase.includes("updation of bank details"))
+        || (lowercase.includes("change of bank details"))) {
       this.actionProvider.handleFormQuestions(2);
     }
 
-    if (lowercase.includes("opt-out of nomination")) {
+    else if (lowercase.includes("opt-out of nomination") 
+        || lowercase.includes("opt out of nomination")) {
       this.actionProvider.handleFormQuestions(3);
     }
-    if (lowercase.includes("registration of new nomination")) {
+    else if (lowercase.includes("registration of new nomination")
+        || lowercase.includes("new nomination")
+        || lowercase.includes("registration nomination")) {
       this.actionProvider.handleFormQuestions(4);
     }
-    if (lowercase.includes("cancellation / change in nomination")) {
+    else if (lowercase.includes("cancellation / change in nomination")
+        || lowercase.includes("cancel nomination") 
+        || lowercase.includes("cancellation in nomination")
+        || lowercase.includes("change in nomination")) {
       this.actionProvider.handleFormQuestions(5);
     }
   }

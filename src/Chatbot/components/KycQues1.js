@@ -38,7 +38,8 @@ const KycQues1 = () => {
     else if(id === 5){
       setAnswer5("")
     }
-
+    setId(Id - 1)
+    
   }
 
   const AnswerContainer = styled.div`
@@ -48,7 +49,7 @@ const KycQues1 = () => {
   `;
 
   const ReadLess = styled.p`
-  color: navajowhite;
+  color: green;
   cursor: pointer;
   `;
 
@@ -62,7 +63,7 @@ const KycQues1 = () => {
         {answer5 ? <AnswerContainer>{answer5}<ReadLess onClick={() => removeHandler(5)}>Read Less ...</ReadLess></AnswerContainer> : <></> }
         <p
           onClick={handleId}
-          style={{ color: "navajowhite", cursor: "pointer" }}
+          style={{ color: "blue", cursor: "pointer" }}
         >
           {answer5 ? "" : "Read more..."}
         </p>
