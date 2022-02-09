@@ -25,7 +25,7 @@ class MessageParser {
       this.actionProvider.handleKycQuestions(3, true);
     } else if (lowercase.includes("status of pan linked to aadhar")) {
       this.actionProvider.handleKycQuestions(6, true);
-    } else if (lowercase === "nomination") {
+    } else if (lowercase === "nomination" || lowercase === "nominations"){
       this.actionProvider.handleNomination();
     } else if (
       lowercase.includes("register pan/update kyc") ||

@@ -68,7 +68,7 @@ const KycQues1 = () => {
       <>
         <AnswerContainer>
           {answer1}
-          <p style={{color:"purple", cursor: "pointer"}} onClick={documentHandler}>Read Sebi Circular dated 3 Nov 2021 & clarification thereof.</p>
+          <p style={{color:"rgb(158, 8, 158)", cursor: "pointer"}} onClick={documentHandler}>Read Sebi Circular dated 3 Nov 2021 & clarification thereof.</p>
           </AnswerContainer>
         {answer2 ? (<AnswerContainer>{answer2}</AnswerContainer> ) : <></> }
         {answer3 ? <AnswerContainer>{answer3}</AnswerContainer> : <></> }
@@ -79,7 +79,7 @@ const KycQues1 = () => {
           onClick={readLessHandler}
           style={{ color: "blue", cursor: "pointer" }}
         >
-          {Id > 1 ? "Read less..." : ""}
+          {Id > 0 ? "Read less..." : ""}
         </p>
         <p
           onClick={handleId}
