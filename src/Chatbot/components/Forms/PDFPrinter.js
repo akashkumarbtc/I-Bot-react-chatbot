@@ -15,7 +15,7 @@ const PDFPrinter = ({ file }) => {
     <i
       className="fas fa-print clickable fa-lg"
       onClick={print}
-      title="download"
+      title="print"
     />
   );
 };

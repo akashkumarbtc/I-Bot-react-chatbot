@@ -165,48 +165,63 @@ class ActionProvider {
     });
   };
 
-  handleFormIsr1 = (id) => {
-    const Cmessage = this.createClientMessage("Form ISR 1");
+  handleFormIsr1 = (id, clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
+    Cmessage = this.createClientMessage("Form ISR 1");
+    this.addMessageToState(Cmessage);
+    }
     const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
       widget: "handleFormIsr1",
     });
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormIsr2 = (id) => {
-    const Cmessage = this.createClientMessage("Form ISR 2");
+  handleFormIsr2 = (id, clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
+    Cmessage = this.createClientMessage("Form ISR 2");
+    this.addMessageToState(Cmessage);
+    }
     const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
       widget: "handleFormIsr2",
     });
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormIsr3 = (id) => {
-    const Cmessage = this.createClientMessage("Form ISR 3");
+  handleFormIsr3 = (id, clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
+    Cmessage = this.createClientMessage("Form ISR 3");
+    this.addMessageToState(Cmessage);
+    }
     const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
       widget: "handleFormIsr3",
     });
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormSh13 = (id) => {
-    const Cmessage = this.createClientMessage("Form SH 13");
+  handleFormSh13 = (id, clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
+     Cmessage = this.createClientMessage("Form SH 13");
+     this.addMessageToState(Cmessage);
+    }
     const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
       widget: "handleFormSh13",
     });
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 
-  handleFormSh14 = (id) => {
-    const Cmessage = this.createClientMessage("Form SH 14");
+  handleFormSh14 = (id, clientMsg=false) => {
+    let Cmessage = null;
+    if (!clientMsg) {
+     Cmessage = this.createClientMessage("Form SH 14");
+     this.addMessageToState(Cmessage);
+    }
     const message = this.createChatBotMessage(<FormMsgComponent id={id} />, {
       widget: "handleFormSh14",
     });
-    this.addMessageToState(Cmessage);
     this.addMessageToState(message);
   };
 

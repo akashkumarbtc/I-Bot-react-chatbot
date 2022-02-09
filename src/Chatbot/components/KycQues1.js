@@ -32,17 +32,15 @@ const KycQues1 = () => {
 
   const readLessHandler = () => {
     console.log(Id)
-    if(Id === 2){
-      setAnswer2("")
-    }
-    else if(Id === 3){
-      setAnswer3("")
-    }
-    else if(Id === 4){
-      setAnswer4("")
-    }
-    else if(Id === 5){
+    
+    if(Id === 4){
       setAnswer5("")
+    }else if(Id === 3){
+      setAnswer4("")
+    }else if(Id === 2){
+      setAnswer3("")
+    }else if(Id === 1){
+      setAnswer2("")
     }
     setId(Id - 1)
     
