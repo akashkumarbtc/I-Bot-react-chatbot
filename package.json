@@ -3,19 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
+    "react-chatbot-kit": "^2.0.1",
     "react-dom": "^17.0.2",
+    "react-pdf": "^5.7.0",
+    "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
+    "react-simple-star-rating": "^4.0.5",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "react-scripts build && aws s3 rm s3://www.i-bot.bluetickconsultants.com/ --recursive && aws s3 cp ./build s3://www.i-bot.bluetickconsultants.com/ --recursive --acl public-read"
   },
   "eslintConfig": {
     "extends": [
